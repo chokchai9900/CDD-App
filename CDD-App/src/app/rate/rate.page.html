@@ -1,9 +1,44 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>rate</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>2 ปี 6 เดือน</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <h4>กระโดดข้ามเชือกบนพื้นไปข้างหน้าได้ (GM)</h4>
+  <ion-card>
+    <ion-card-content>
+      <p>อุปกรณ์ : </p>
+      <ion-img class="center" src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"></ion-img>
+      <br>
+      <p>วิธีประเมิน </p>
+      <p>1. วางเชือกเป็นเส้นตรงบนพื้นหน้าตัวเด็ก<br>
+        2. กระโดดข้ามเชือกที่วางอยู่บนพื้นให้เด็กดู และบอกให้เด็กทำตาม</p>
+      <br>
+      <p>ผ่าน : </p>
+      <p>เด็กสามารถกระโดดข้ามเชือกได้โดยเท้าลงพื้นพร้อมกัน หรือเท้าไม่ต้องลงพื้นพร้อมกันก็ได้</p>
+    </ion-card-content>
+  </ion-card>
+
+  <div>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="btn">
+          <ion-button shape="round" id="btn">
+            บันทึก
+          </ion-button>
+        </ion-col>
+
+        <ion-col class="btn">
+          <ion-button shape="round" id="btn">
+            ต่อไป
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 
 </ion-content>
