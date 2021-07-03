@@ -1,7 +1,9 @@
-h1 h2 h3 h4 h5 h6 p
-{
-    .font {
-        font-family: Kanit;
-    }
-}
-
+@font-face{
+    font-family: Kanit;
+    src: url('../assets/fonts/Kanit-Medium.ttf') format('truetype');
+  }
+  
+  *{
+    font-family: Kanit;
+  }
+  
