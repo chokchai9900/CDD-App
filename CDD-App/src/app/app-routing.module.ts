@@ -6,11 +6,11 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
-  // {
-  //   path: '',
-  //   redirectTo: 'home',
-  //   pathMatch: 'full'
-  // },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
   {
     path: 'info',
     loadChildren: () => import('./info/info.module').then( m => m.InfoPageModule)
@@ -50,11 +50,6 @@ const routes: Routes = [
   {
     path: 'child-list',
     loadChildren: () => import('./child-list/child-list.module').then( m => m.ChildListPageModule)
-  },
-  {
-    path: '',
-    redirectTo: 'child-list',
-    pathMatch: 'full'
   },
 
 ];
