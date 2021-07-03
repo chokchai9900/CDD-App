@@ -1,9 +1,74 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>EditProfile</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>แก้ไขข้อมูลเด็ก</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <center>
+    <ion-button id="avatar">
+      <ion-avatar>
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+    </ion-button>
+
+  </center>
+  <ion-card>
+    <ion-card-content>
+      <ion-input type="text" slot="start" value="เทส">
+        <h2>ชื่อ </h2>
+      </ion-input>
+
+      <ion-item class="item-native">
+        <ion-label>ว/ด/ป</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" min="1994-03-14" max="2012-12-09" value="2002-09-23T15:03:46.789">
+        </ion-datetime>
+      </ion-item>
+
+      <ion-radio-group value="male">
+        <h2>เพศ</h2>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item class="item-native">
+                <ion-label>ชาย</ion-label>
+                <ion-radio slot="start" value="male" color="danger"></ion-radio>
+              </ion-item>
+            </ion-col>
+
+            <ion-col>
+              <ion-item class="item-native">
+                <ion-label>หญิง</ion-label>
+                <ion-radio slot="start" value="female" color="danger"></ion-radio>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-radio-group>
+
+      <div class="matgintop">
+        <ion-grid class="btn">
+          <ion-row>
+            <ion-col class="btn">
+              <ion-button shape="round" id="btn">
+                บันทึก
+              </ion-button>
+            </ion-col>
+
+            <ion-col class="btn">
+              <ion-button shape="round" id="btn">
+                ยกเลิก
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
 
 </ion-content>

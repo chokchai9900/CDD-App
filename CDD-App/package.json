@@ -1,5 +1,5 @@
 {
-  "name": "CDD-App",
+  "name": "cdd-app",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -68,5 +68,8 @@
     "ts-node": "~8.3.0",
     "typescript": "~4.2.4"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "main": "karma.conf.js",
+  "keywords": [],
+  "license": "ISC"
 }
