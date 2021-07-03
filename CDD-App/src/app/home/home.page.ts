@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DBContextService } from "../services/dbcontext.service";
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  public RateDatal$ = Promise.resolve<any>([]);
 
+  constructor(private service: DBContextService) {}
+
+  ngOnInit(){
+    this.RateDatal$ = this.service.getData();
+    console.log(this.RateDatal$);
+  }
 }

@@ -1,5 +1,5 @@
 export class DataModel{
-    RateID: string;
+    _id: string;
     RateTitle: string;
     RateType: string;
     RateData: RateModel;
