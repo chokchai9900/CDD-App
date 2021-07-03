@@ -48,11 +48,13 @@ pre {
 .text {
   font-size: 30px;
   margin-top: -10px;
+  margin-bottom: 25px;
 }
 
-.ion-button {
-  // color: white;
-  background-color: #6689e6;
-  border-radius: 50px;
+ion-button{
+  --background: #6689E6;
+}
+.matgintop{
+  margin-top: 15px;
 }
 
