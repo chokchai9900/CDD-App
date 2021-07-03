@@ -4,8 +4,8 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  // top: 50%;
+  // transform: translateY(-50%);
 }
 
 #container strong {
@@ -25,3 +25,36 @@
 #container a {
   text-decoration: none;
 }
+
+.pretitle {
+  margin-top: 30px;
+}
+
+.card-home {
+  background: #6689e6;
+  width: auto;
+  height: 400px;
+  margin: 0px;
+  border-radius: 0px 0px 175px 175px;
+}
+ion-card-title {
+  font-size: 30px;
+  color: white;
+}
+pre {
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+.text {
+  font-size: 30px;
+  margin-top: -10px;
+  margin-bottom: 25px;
+}
+
+ion-button{
+  --background: #6689E6;
+}
+.matgintop{
+  margin-top: 15px;
+}
+
