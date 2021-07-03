@@ -1,0 +1,31 @@
+.font {
+    font-family: Kanit;
+    font-size: 15px; 
+    padding: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.title{
+    font-family: Kanit;
+    text-align: left;
+    padding-left: 1px;
+}
+
+.arrow-back {
+    font-size: 30px;
+    padding-left: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+ion-content{
+    --ion-background-color: #6689e6;
+    --ion-text-color: #FFFF;
+}
+
+ion-toolbar{
+    --ion-background-color: #FCF7F1;
+    --ion-text-color: #000;
+}
+

@@ -1,9 +1,32 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>ChildList</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title">ข้อมูล</ion-title>
+    <ion-buttons slot = "end">
+      <button ion-button class="btn-adj">
+        <ion-icon name="person-add" class="icon-adj"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="background">
+  
+  <ion-item-sliding>
+    <ion-item>
+      <ion-label>น้องอุ้ม</ion-label>
+    </ion-item>
+
+    <ion-item-options side="start">
+      <ion-item-option color="danger">ลบ</ion-item-option>
+    </ion-item-options>
+
+    <ion-item-options side="end">
+      <ion-item-option color="primary">แก้ไข</ion-item-option>
+    </ion-item-options>
+
+  </ion-item-sliding>
 
 </ion-content>
