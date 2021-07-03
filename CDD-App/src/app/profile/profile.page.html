@@ -1,9 +1,53 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>ข้อมูลเด็ก</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <center>
+    <ion-button id="avatar">
+      <ion-avatar>
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+    </ion-button>
+
+  </center>
+  <ion-card>
+    <ion-card-content>
+
+      <ion-item>
+        <h2>ชื่อ </h2>
+        <h2 slot="end">เทส</h2>
+      </ion-item>
+
+      <ion-item>
+        <h2>อายุ </h2>
+        <h2  slot="end">1 ปี 2 เดือน</h2>
+      </ion-item>
+
+      <div class="btn">
+      <div>
+        <ion-col class="btn">
+          <ion-button shape="round" id="btn">
+            ประเมินพัฒนาการ
+          </ion-button>
+        </ion-col>
+      </div>
+      <div>
+        <ion-col class="btn">
+          <ion-button shape="round" id="btn">
+            สรุปพัฒนาการ
+          </ion-button>
+        </ion-col>
+      </div>
+    </div>
+
+    </ion-card-content>
+  </ion-card>
+
 
 </ion-content>
