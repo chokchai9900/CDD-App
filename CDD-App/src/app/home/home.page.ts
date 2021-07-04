@@ -8,8 +8,12 @@ import { DBContextService } from "../services/dbcontext.service";
 })
 export class HomePage {
 
+  public RateDatal$ = Promise.resolve<any>([]);
+
   constructor(private service: DBContextService) {}
 
   ngOnInit(){
+    this.RateDatal$ = this.service.getRateData();
+    console.log(this.RateDatal$);
   }
 }

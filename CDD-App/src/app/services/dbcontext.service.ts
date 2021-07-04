@@ -15,15 +15,16 @@ export class DBContextService {
   private url : string = 'https://cdd-service.herokuapp.com/api/';
   constructor(private httpClient: HttpClient) { }
 
-  getData(): Promise<any>{
-    return this.httpClient.get(this.url).toPromise();
-  }
-  getDataByID(_id: string): Promise<any>{
-    let apiUrl = this.url + "getByID/" + _id;
+  getRateData(): Promise<any>{
+    let apiUrl = this.url + "rateData/";
     return this.httpClient.get(apiUrl).toPromise();
   }
-  getByAgeValidate(_id: string): Promise<any>{
-    let apiUrl = this.url + "getByAgeValidate/" + _id;
+  getRateDataByID(_id: string): Promise<any>{
+    let apiUrl = this.url + "rateData/getByID/" + _id;
+    return this.httpClient.get(apiUrl).toPromise();
+  }
+  getRateDataByAgeValidate(_id: string): Promise<any>{
+    let apiUrl = this.url + "rateData/getByAgeValidate/" + _id;
     return this.httpClient.get(apiUrl).toPromise();
   }
 }
