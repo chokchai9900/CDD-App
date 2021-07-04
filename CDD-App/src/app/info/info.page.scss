@@ -1,34 +1,48 @@
 .font {
-    font-family: Kanit;
-    font-size: 15px; 
-    padding: 10px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+  font-size: 15px;
+  padding: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
+.title {
+  text-align: center;
+}
 
-.title{
-    text-align: center;
+p {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .arrow-back {
-    font-size: 30px;
-    padding-left: 10px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+  font-size: 30px;
+  padding-left: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
-ion-content{
-    --ion-background-color: #6689e6;
-    --ion-text-color: #FFFF;
+ion-content {
+  --ion-background-color: #6689e6;
+  --ion-text-color: #ffff;
 }
 
-ion-toolbar{
-    --ion-background-color: #6689e6;
-    --ion-text-color: #FFFF;
-}
 
 lottie-player {
-    height: 65%;
+  height: 65%;
 }
 
+@media screen and (min-width: 700px){
+  h4 {
+    font-size: 30px;
+  }
+  p {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .font {
+    font-size: 25px;
+    padding: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}

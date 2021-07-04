@@ -2,11 +2,7 @@ ion-content {
     --ion-background-color: #6689e6;
   }
   
-  ion-header {
-    --ion-text-color: #ffff;
-    --ion-background-color: #6689e6;
-  }
-  
+
   ion-title {
     text-align: center;
   }
@@ -30,6 +26,7 @@ ion-content {
   
   ion-button{
     font-size: 20px;
+    width: 70%;
   }
 
   ion-img{
@@ -61,5 +58,21 @@ ion-content {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+  }
+
+  @media screen and (min-width: 700px) and (max-width: 1700px){
+    ion-button {
+      font-size: 30px;
+      --background-activated: #ff9b31;
+      width: 50%;
+    }
+    h4 {
+      font-size: 30px;
+      margin-left: 21px;
+      margin-right: 25px;
+    }
+    p{
+      font-size: 25px;
+    }
   }
   

@@ -1,35 +1,47 @@
-
 .font {
-    font-family: Kanit;
-    font-size: 15px; 
+  font-size: 15px;
 }
 
+ion-title{
+text-align: center;
+}
 ion-button {
-    font-family: Kanit;
-    font-size: 14px;
-    width: 230px;
-    height: auto;
-    margin: 10px 0px 10px 0px;
-    white-space: normal;
-    --background: #FCF7F1;
-    --color: #000;
-} 
+  font-size: 14px;
+  width: 230px;
+  margin-top: 30px;
+  height: 40px;
+  white-space: normal;
+  --background: #fcf7f1;
+  --color: #000;
+}
 
+ion-content {
+  --ion-background-color: #6689e6;
+  --ion-text-color: #ffff;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 .textInButton{
-    padding-top: 10px;
-    padding-bottom: 10px;
+    margin-top: 30px;
 }
 
-
-ion-content{
-    font-family: Kanit;
-    --ion-background-color: #6689e6;
-    --ion-text-color: #FFFF;
-    
+#head{
+    margin-top: 60px;
 }
 
-ion-toolbar{
-    --ion-background-color: #6689e6;
-    --ion-text-color: #FFFF;
+@media screen and (min-width: 700px){
+  ion-button {
+    font-size: 20px;
+    width: 60%;
+    height: 70px;
+    --background-activated: #ff9b31;
+    white-space: normal;
+    --background: #fcf7f1;
+    --color: #000;
+  }
 }
-

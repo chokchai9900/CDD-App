@@ -8,56 +8,59 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <!-- <ion-button id="avatar" class="center"> -->
-      <ion-avatar class="center">
-        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-      </ion-avatar>
-    <!-- </ion-button> -->
+
+  <ion-button id="avatar">
+    <ion-avatar class="center">
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+  </ion-button>
 
   <ion-card>
     <ion-card-content>
-      <ion-input type="text" slot="start" class="font-size">
-        <h2>ชื่อ </h2>
-      </ion-input>
+      <div class="margincard">
+        <ion-input type="text" slot="start" class="font-size">
+          <h2>ชื่อ </h2>
+        </ion-input>
 
-      <ion-item class="item-native font-size">
-        <ion-label>ว/ด/ป</ion-label>
-        <ion-datetime displayFormat="DD/MM/YYYY" value="2002-09-23T15:03:46.789">
-        </ion-datetime>
-      </ion-item>
+        <ion-item class="font-size">
+          <ion-label>ว/ด/ป</ion-label>
+          <ion-datetime displayFormat="DD/MM/YYYY" value="2002-09-23T15:03:46.789">
+          </ion-datetime>
+        </ion-item>
 
-      <ion-radio-group value="">
-        <h2>เพศ</h2>
-        <ion-grid>
-          <ion-row>
-            <ion-col>
-              <ion-item class="item-native font-size">
-                <ion-label>ชาย</ion-label>
-                <ion-radio slot="start" value="male" color="danger"></ion-radio>
-              </ion-item>
-            </ion-col>
+        <ion-radio-group value="">
+          <h2>เพศ</h2>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-item class="font-size">
+                  <ion-label>ชาย</ion-label>
+                  <ion-radio slot="start" value="male" color="danger"></ion-radio>
+                </ion-item>
+              </ion-col>
 
-            <ion-col>
-              <ion-item class="item-native font-size">
-                <ion-label>หญิง</ion-label>
-                <ion-radio slot="start" value="female" color="danger"></ion-radio>
-              </ion-item>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-radio-group>
+              <ion-col>
+                <ion-item class="font-size">
+                  <ion-label>หญิง</ion-label>
+                  <ion-radio slot="start" value="female" color="danger"></ion-radio>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-radio-group>
+      </div>
 
       <div class="matgintop">
         <ion-grid class="btn">
           <ion-row>
-            <ion-col class="btn font-size">
-              <ion-button shape="round" id="btn">
+            <ion-col class="btn">
+              <ion-button id="btn">
                 บันทึก
               </ion-button>
             </ion-col>
 
             <ion-col class="btn">
-              <ion-button shape="round" id="btn">
+              <ion-button id="btn">
                 ต่อไป
               </ion-button>
             </ion-col>

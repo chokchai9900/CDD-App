@@ -8,40 +8,41 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-button id="avatar" class="center">
-      <ion-avatar>
-        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-      </ion-avatar>
-    </ion-button>
+  <!-- <ion-button id="avatar" class="center"> -->
+    <ion-avatar  class="center">
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+  <!-- </ion-button> -->
   <ion-card>
     <ion-card-content>
+      <div class="margincard">
+        <ion-item>
+          <h2>ชื่อ </h2>
+          <h2 slot="end">เทส</h2>
+        </ion-item>
 
-      <ion-item>
-        <h2>ชื่อ </h2>
-        <h2 slot="end">เทส</h2>
-      </ion-item>
-
-      <ion-item>
-        <h2>อายุ </h2>
-        <h2  slot="end">1 ปี 2 เดือน</h2>
-      </ion-item>
+        <ion-item>
+          <h2>อายุ </h2>
+          <h2 slot="end">1 ปี 2 เดือน</h2>
+        </ion-item>
+      </div>
 
       <div class="btn">
-      <div>
-        <ion-col class="btn">
-          <ion-button shape="round" id="btn">
-            ประเมินพัฒนาการ
-          </ion-button>
-        </ion-col>
+        <div>
+          <ion-col class="btn">
+            <ion-button shape="round" id="btn">
+              ประเมินพัฒนาการ
+            </ion-button>
+          </ion-col>
+        </div>
+        <div>
+          <ion-col class="btn">
+            <ion-button shape="round" id="btn">
+              สรุปพัฒนาการ
+            </ion-button>
+          </ion-col>
+        </div>
       </div>
-      <div>
-        <ion-col class="btn">
-          <ion-button shape="round" id="btn">
-            สรุปพัฒนาการ
-          </ion-button>
-        </ion-col>
-      </div>
-    </div>
 
     </ion-card-content>
   </ion-card>
