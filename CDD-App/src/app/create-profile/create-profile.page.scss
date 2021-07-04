@@ -2,11 +2,6 @@ ion-content {
   --ion-background-color: #6689e6;
 }
 
-ion-header {
-  --ion-text-color: #ffff;
-  --ion-background-color: #6689e6;
-}
-
 ion-title {
   text-align: center;
 }
@@ -35,37 +30,50 @@ ion-item {
   padding-bottom: 5px;
 }
 
-ion-button{
+ion-button {
   font-size: 20px;
+  --border-radius: 0px 0px 0px 0px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
 }
 
-.font-size{
+.margincard {
+  margin: 30px;
+}
+
+.font-size {
   font-size: 20px;
 }
 
 h2 {
   font-size: 20px;
   margin-left: 15px;
+  margin-right: 15px;
 }
 
 .matgintop {
   margin-top: 15px;
+  padding: 0px;
 }
 
-.btn{
-    text-align: center;
+.btn {
+  text-align: center;
+  padding: 0px;
 }
 
-#btn{
-    --background: #fdbc77;
-    --color:black;
+#btn {
+  --background: #fdbc77;
+  --background-activated: #ff9b31;
+  --color: black;
 }
 
-#avatar{
-    height: auto;
-    --background:var(--ion-background-color);
-    --box-shadow:var(--ion-background-color) 0px 0px 0px;
-    margin-bottom: -20px;
+#avatar {
+  height: auto;
+  --background: var(--ion-background-color);
+  --box-shadow: var(--ion-background-color) 0px 0px 0px;
+  margin-bottom: -20px;
+  --background-activated: #849bdd;
 }
 
 .center {
@@ -74,6 +82,57 @@ h2 {
   margin-right: auto;
 }
 
-ion-radio{
+ion-radio {
   margin-right: 10px;
+}
+
+ion-card-content {
+  padding: 0%;
+}
+
+@media screen and (min-width: 360px) {
+  ion-button {
+    margin: 0px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  ion-avatar {
+    height: 200px;
+    width: 200px;
+    box-shadow: #00000041 2px 2px 5px;
+    margin: 30px;
+  }
+  ion-button {
+    font-size: 30px;
+    --border-radius: 0px 0px 0px 0px;
+    width: 100%;
+    padding: 0px;
+    margin-bottom: 0px;
+  }
+
+  .font-size {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 30px;
+    margin-left: 21px;
+    margin-right: 25px;
+  }
+  .button-inner {
+    font-size: 30px;
+    color: white;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  ion-button {
+    font-size: 30px;
+    --background-activated: #ff9b31;
+    --border-radius: 0px 0px 0px 0px;
+    width: 100%;
+    padding: 0px;
+    margin-bottom: 0px;
+  }
 }

@@ -1,38 +1,84 @@
-.font {
-    font-family: Kanit;
-    font-size: 15px; 
+#data {
+    margin-top: 10px;
+    padding: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  
+  #text {
+    font-size: 20px;
+    margin-bottom: 120px;
+    color: #000;
+    padding: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  
+  .font {
+    font-size: 15px;
     padding: 30px;
     margin-top: 0px;
     margin-bottom: 0px;
-}
-
-.title{
-    font-family: Kanit;
+  }
+  
+  .title {
     text-align: center;
     padding-right: 65px;
-}
-
-ion-content{
+  }
+  
+  ion-content {
     --ion-background-color: #6689e6;
-    --ion-text-color: #FFFF;
-}
-
-ion-toolbar{
-    --ion-background-color: #6689e6;
-    --ion-text-color: #fff;
-}
-
-ion-button {
-    font-family: Kanit;
-    font-size: 14px;
+    --ion-text-color: #ffff;
+  }
+  ion-button {
+    font-size: 20px;
     width: 150px;
     height: auto;
     white-space: normal;
-    --background: #FDBC77;
+    --background: #fdbc77;
+    --background-activated: #ff9b31;
     --color: #000;
-} 
-
-.textInButton{
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
+  }
+  
+  .textInButton {
+    width: auto;
+    height: 35px;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  .datapadding {
+    padding-top: 30px;
+  }
+  
+  @media screen and (min-width: 700px) {
+    #data {
+      font-size: 25px;
+      margin-top: 10px;
+      padding: 30px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+  
+    #text {
+      font-size: 40px;
+      margin-bottom: 120px;
+      color: #000;
+      padding: 10px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+  
+    .textInButton {
+      font-size: 30px;
+      width: auto;
+      height: 70px;
+    }
+  
+    .datapadding {
+      padding-top: 50px;
+    }
+  }
+  

@@ -2,10 +2,6 @@ ion-content {
   --ion-background-color: #6689e6;
 }
 
-ion-header {
-  --ion-text-color: #ffff;
-  --ion-background-color: #6689e6;
-}
 
 ion-title {
   text-align: center;
@@ -44,6 +40,10 @@ h2 {
     
 }
 
+.margincard{
+  margin: 30px;
+}
+
 .matgintop {
   margin-top: 15px;
 }
@@ -77,4 +77,31 @@ ion-button{
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media screen and (min-width: 700px) {
+  ion-avatar {
+    height: 200px;
+    width: 200px;
+    box-shadow: #00000041 2px 2px 5px;
+    margin: 30px;
+  }
+  ion-button {
+    font-size: 30px;
+    --background-activated: #ff9b31;
+  }
+  .font-size {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 30px;
+    margin-left: 21px;
+    margin-right: 25px;
+  }
+
+  .button-inner {
+    font-size: 30px;
+    color: white;
+  }
 }

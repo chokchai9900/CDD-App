@@ -15,6 +15,7 @@ export class ResultsPage implements OnInit {
     Chart.register(...registerables);
     Chart.defaults.font.family = "Kanit";
     Chart.defaults.color="white";
+    Chart.defaults.font.size=20;
    }
 
   ngOnInit() {

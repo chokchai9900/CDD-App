@@ -1,10 +1,7 @@
 ion-content {
   --ion-background-color: #6689e6;
 }
-ion-header {
-  --ion-text-color: #ffff;
-  --ion-background-color: #6689e6;
-}
+
 ion-title {
   text-align: center;
 }
@@ -21,8 +18,8 @@ p {
 .iconmargin {
   margin-left: -55%;
 }
-.titlemargin{
-    margin-right: -40%;
+.titlemargin {
+  margin-right: -40%;
 }
 .icon-pass {
   height: 15px;
@@ -32,7 +29,7 @@ p {
   height: 15px;
   color: rgb(255, 115, 115);
 }
-.status{
+.status {
   margin-left: -30%;
 }
 
@@ -48,4 +45,26 @@ ion-button {
 
 .center {
   text-align: center;
+}
+
+@media screen and (min-width: 700px) {
+  .cardresult {
+    color: white;
+    font-size: 30px;
+    padding-top: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  ion-button {
+    font-size: 30px;
+    margin: 15px;
+  }
+  .icon-pass {
+    height: 20px;
+    color: rgb(255, 206, 115);
+  }
+  .icon-notpass {
+    height: 20px;
+    color: rgb(255, 115, 115);
+  }
 }

@@ -13,15 +13,6 @@
   line-height: 26px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
 #container a {
   text-decoration: none;
 }
@@ -40,22 +31,53 @@
 ion-card-title {
   font-size: 30px;
   color: white;
-  
 }
-.text {
+#text {
   font-size: 30px;
   margin-top: -10px;
   margin-bottom: 25px;
 }
 
-ion-button{
-  --background: #6689E6;
+ion-button {
+  --background: #6689e6;
+  --box-shadow:#6689e6 0px 0px 0px ;
 }
-.matgintop{
+.matgintop {
   margin-top: 15px;
 }
 
-.lottie{
+.lottie {
   width: auto;
   height: 275px;
+}
+
+@media screen and (min-width: 700px){
+
+  .lottie {
+    width: auto;
+    height: 300px;
+  }
+  .card-home {
+    background: #6689e6;
+    width: auto;
+    height: 500px;
+    margin: 0px;
+    border-radius: 0% 0% 50% 50%;
+  }
+
+  ion-card-title {
+    font-size: 50px;
+  }
+
+  p {
+    font-size: 30px;
+  }
+  #text {
+    font-size: 50px;
+    margin-top: -10px;
+    margin-bottom: 25px;
+  }
+  ion-button {
+    font-size: 30px;
+  }
 }

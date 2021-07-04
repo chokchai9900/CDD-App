@@ -3,22 +3,37 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
-    <ion-title class="font"><h4><center>x ปี xx เดือน</center></h4></ion-title>
+    <ion-title class="font">
+      <h4>x ปี xx เดือน</h4>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="font">
-  <center>
-  <ion-button shape="round" style="margin-top: 30px;" [routerLink]="['/rate']"><div class="textInButton" >พัฒนาการด้านการเคลื่อนไหว (GM)</div></ion-button>
-  <br>
-  <ion-button shape="round" [routerLink]="['/rate']"><div class="textInButton">พัฒนาการด้านกล้ามเนื้อมัดเล็กและสติปัญญา (FM)</div></ion-button>
-  <br>
-  <ion-button shape="round" [routerLink]="['/rate']"><div class="textInButton">พัฒนาการด้านการเข้าใจภาษา (RL)</div></ion-button>
-  <br>
-  <ion-button shape="round" [routerLink]="['/rate']"><div class="textInButton">พัฒนาการด้านการใช้ภาษา (EL)</div></ion-button>
-  <br>
-  <ion-button shape="round" [routerLink]="['/rate']"><div class="textInButton">พัฒนาการด้านการช่วยเหลือตนเองและสังคม (PS)</div></ion-button>
-  <br>
-  <ion-button shape="round" color="warning" [routerLink]="['/results']"><div class="textInButton">สรุปพัฒนาการ</div></ion-button>
-  </center>
+  <ion-grid>
+    <ion-row class="center">
+      <ion-button id="head" shape="round" [routerLink]="['/rate']" class="textInButton">
+        พัฒนาการด้านการเคลื่อนไหว (GM)</ion-button>
+    </ion-row>
+    <ion-row class="center">
+      <ion-button shape="round" [routerLink]="['/rate']" class="textInButton">
+        พัฒนาการด้านกล้ามเนื้อมัดเล็กและสติปัญญา (FM)</ion-button>
+    </ion-row>
+    <ion-row class="center">
+      <ion-button shape="round" [routerLink]="['/rate']" class="textInButton">
+        พัฒนาการด้านการเข้าใจภาษา (RL)</ion-button>
+    </ion-row>
+    <ion-row class="center">
+      <ion-button shape="round" [routerLink]="['/rate']" class="textInButton">
+        พัฒนาการด้านการใช้ภาษา (EL)</ion-button>
+    </ion-row>
+    <ion-row class="center">
+      <ion-button shape="round" [routerLink]="['/rate']" class="textInButton">
+        พัฒนาการด้านการช่วยเหลือตนเองและสังคม (PS)</ion-button>
+    </ion-row>
+    <ion-row class="center">
+      <ion-button shape="round" color="warning" [routerLink]="['/results']" class="textInButton">สรุปพัฒนาการ
+      </ion-button>
+    </ion-row>
+  </ion-grid>
 </ion-content>
