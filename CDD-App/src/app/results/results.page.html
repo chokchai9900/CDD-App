@@ -3,13 +3,147 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/menu"></ion-back-button>
     </ion-buttons>
-    <ion-title>results</ion-title>
+    <ion-title>สรุปพัฒนา</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content  [fullscreen]="true">
   <div class="ion-padding">
     <canvas #barCanvas></canvas>
   </div>
-    
+
+  <div class="cardresult">
+    <ion-grid>
+      <ion-row>
+        <!-- title -->
+        <ion-col class="titlemargin">
+          <p>
+            GM
+          </p>
+        </ion-col>
+        <!-- icon status -->
+        <ion-col>
+          <ion-icon class="icon-pass" name="ellipse"></ion-icon>
+        </ion-col>
+        <!-- status -->
+        <ion-col class="iconmargin">
+          <p>
+            ผ่าน
+          </p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <!-- title -->
+        <ion-col class="titlemargin">
+          <p>
+            FM
+          </p>
+        </ion-col>
+        <!-- icon status -->
+        <ion-col>
+          <ion-icon class="icon-notpass" name="ellipse"></ion-icon>
+        </ion-col>
+        <!-- status -->
+        <ion-col class="iconmargin">
+          <p>
+            ไม่ผ่าน
+          </p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <!-- title -->
+        <ion-col class="titlemargin">
+          <p>
+            RL
+          </p>
+        </ion-col>
+        <!-- icon status -->
+        <ion-col>
+          <ion-icon class="icon-pass" name="ellipse"></ion-icon>
+        </ion-col>
+        <!-- status -->
+        <ion-col class="iconmargin">
+          <p>
+            ผ่าน
+          </p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <!-- title -->
+        <ion-col class="titlemargin">
+          <p>
+            EL
+          </p>
+        </ion-col>
+        <!-- icon status -->
+        <ion-col>
+          <ion-icon class="icon-pass" name="ellipse"></ion-icon>
+        </ion-col>
+        <!-- status -->
+        <ion-col class="iconmargin">
+          <p>
+            ผ่าน
+          </p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <!-- title -->
+        <ion-col class="titlemargin">
+          <p>
+            PS
+          </p>
+        </ion-col>
+        <!-- icon status -->
+        <ion-col>
+          <ion-icon class="icon-notpass" name="ellipse"></ion-icon>
+        </ion-col>
+        <!-- status -->
+        <ion-col class="iconmargin">
+          <p>
+            ไม่ผ่าน
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="cardresult">
+    <ion-grid>
+      <ion-row>
+        <!-- icon status -->
+        <ion-col>
+          <ion-icon class="icon-pass" name="ellipse"></ion-icon>
+        </ion-col>
+        <!-- status -->
+        <ion-col class="status">
+          <p>
+            ผ่าน
+          </p>
+        </ion-col>
+        <!-- icon status -->
+        <ion-col>
+          <ion-icon class="icon-notpass" name="ellipse"></ion-icon>
+        </ion-col>
+        <!-- status -->
+        <ion-col class="status">
+          <p>
+            ไม่ผ่าน
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="center">
+    <ion-col>
+      <ion-button shape="round" id="btn">
+        หน้าแรก
+      </ion-button>
+    </ion-col>
+  </div>
+
 </ion-content>
