@@ -8,17 +8,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <center>
-    <ion-button id="avatar">
-      <ion-avatar>
+    <!-- <ion-button id="avatar" class="center"> -->
+      <ion-avatar class="center">
         <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
       </ion-avatar>
-    </ion-button>
+    <!-- </ion-button> -->
 
-  </center>
   <ion-card>
     <ion-card-content>
-      <ion-input type="text" slot="start">
+      <ion-input type="text" slot="start" class="font-size">
         <h2>ชื่อ </h2>
       </ion-input>
 
@@ -33,14 +31,14 @@
         <ion-grid>
           <ion-row>
             <ion-col>
-              <ion-item class="item-native">
+              <ion-item class="item-native font-size">
                 <ion-label>ชาย</ion-label>
                 <ion-radio slot="start" value="male" color="danger"></ion-radio>
               </ion-item>
             </ion-col>
 
             <ion-col>
-              <ion-item class="item-native">
+              <ion-item class="item-native font-size">
                 <ion-label>หญิง</ion-label>
                 <ion-radio slot="start" value="female" color="danger"></ion-radio>
               </ion-item>
