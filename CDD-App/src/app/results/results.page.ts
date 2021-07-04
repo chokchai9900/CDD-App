@@ -13,6 +13,7 @@ export class ResultsPage implements OnInit {
 
   constructor() {
     Chart.register(...registerables);
+    Chart.defaults.font.family = "Kanit";
    }
 
   ngOnInit() {
@@ -26,11 +27,11 @@ export class ResultsPage implements OnInit {
     this.barChart = new Chart(this.barCanvas.nativeElement, {
       type: "bar",
       data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: ["GM", "FM", "RL", "EL", "PS"],
         datasets: [
           {
             label: "# of Votes",
-            data: [12, 19, 3, 5, 2, 3],
+            data: [1,2,3,1,4],
             backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
@@ -50,8 +51,29 @@ export class ResultsPage implements OnInit {
             borderWidth: 1
           }
         ]
+      },
+      options:{
+        scales:{
+          yAxes:{
+            ticks:{
+              callback: function(label,index,labels){
+                switch (label) {
+                case 0:
+                  return '';
+                case 1:
+                    return '2 ปี 1 เดือน';
+                case 2:
+                    return '2 ปี 6 เดือน';
+                case 3:
+                    return '2 ปี 7 เดือน';
+                case 4:
+                    return '3 ปี 1 เดือน';
+                }
+              }
+            }
+          }
+        }
       }
     });
   }
-
 }
