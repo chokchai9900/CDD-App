@@ -7,10 +7,11 @@ ion-title {
 }
 
 ion-avatar {
-  height: 125px;
-  width: 125px;
+  height: 100%;
+  width: 100%;
   box-shadow: #00000041 2px 2px 5px;
-  margin: 30px;
+  padding: 0px;
+  margin-bottom: 5px;
 }
 
 ion-card {
@@ -70,10 +71,11 @@ h2 {
 
 #avatar {
   height: auto;
+  width: 50%;
   --background: var(--ion-background-color);
   --box-shadow: var(--ion-background-color) 0px 0px 0px;
-  margin-bottom: -20px;
   --background-activated: #849bdd;
+  margin-top: 30px;
 }
 
 .center {
@@ -98,8 +100,8 @@ ion-card-content {
 
 @media screen and (min-width: 700px) {
   ion-avatar {
-    height: 200px;
-    width: 200px;
+    height: 100%;
+    width: 100%;
     box-shadow: #00000041 2px 2px 5px;
     margin: 30px;
   }

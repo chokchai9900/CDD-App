@@ -2,8 +2,8 @@
   font-size: 15px;
 }
 
-ion-title{
-text-align: center;
+ion-title {
+  text-align: center;
 }
 ion-button {
   font-size: 14px;
@@ -26,15 +26,20 @@ ion-content {
   margin-right: auto;
   text-align: center;
 }
-.textInButton{
-    margin-top: 30px;
+.textInButton {
+  margin-top: 30px;
 }
 
-#head{
-    margin-top: 60px;
+#head {
+  margin-top: 60px;
 }
 
-@media screen and (min-width: 700px){
+#result {
+  --background: #fdbc77;
+  --background-activated: #ff9b31;
+}
+
+@media screen and (min-width: 700px) {
   ion-button {
     font-size: 20px;
     width: 60%;
@@ -43,5 +48,10 @@ ion-content {
     white-space: normal;
     --background: #fcf7f1;
     --color: #000;
+  }
+
+  #result {
+    --background: #fdbc77;
+    --background-activated: #ff9b31;
   }
 }
