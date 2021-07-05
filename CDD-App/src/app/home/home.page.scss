@@ -34,16 +34,17 @@ ion-card-title {
 }
 #text {
   font-size: 30px;
-  margin-top: -10px;
+  margin-top: 0px;
   margin-bottom: 25px;
+}
+#wel {
+  margin-top: 20px;
+  margin-bottom: 5px;
 }
 
 ion-button {
   --background: #6689e6;
-  --box-shadow:#6689e6 0px 0px 0px ;
-}
-.matgintop {
-  margin-top: 15px;
+  --background-activated: rgb(55, 88, 179);
 }
 
 .lottie {
@@ -51,8 +52,18 @@ ion-button {
   height: 275px;
 }
 
-@media screen and (min-width: 700px){
+#img {
+  height: 250px;
+  width: auto;
+}
 
+ion-card-content {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: -30px;
+}
+@media screen and (min-width: 700px) {
   .lottie {
     width: auto;
     height: 300px;
@@ -65,8 +76,25 @@ ion-button {
     border-radius: 0% 0% 50% 50%;
   }
 
+  #img {
+    height: 350px;
+    width: auto;
+  }
+
+  ion-card-content {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: -40px;
+  }
+
   ion-card-title {
     font-size: 50px;
+  }
+
+  #wel {
+    margin-top: 50px;
+    margin-bottom: 5px;
   }
 
   p {
@@ -74,10 +102,11 @@ ion-button {
   }
   #text {
     font-size: 50px;
-    margin-top: -10px;
+    margin-top: 0px;
     margin-bottom: 25px;
   }
   ion-button {
     font-size: 30px;
+    --box-shadow: 5px 5px 0px;
   }
 }
