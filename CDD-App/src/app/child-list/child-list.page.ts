@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
+import { DBContextService } from '../services/dbcontext.service';
 
 @Component({
   selector: 'app-child-list',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChildListPage implements OnInit {
 
-  constructor() { }
+  public ProfileData$ = Promise.resolve<any>([]) ; 
+  constructor(private service: DBContextService,private router: Router) { }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter(){
+    this.ProfileData$ = this.service.getProfileChild()
+    this.ProfileData$.then((it :any) =>{
+      console.log(this.ProfileData$);
+    });
+    
+    
+  }
+  getDetail(data :any){
+    let navigationExtras: NavigationExtras  = {
+      state:{
+        data: data
+      }
+    };
+    this.router.navigate(['profile'],navigationExtras)
   }
 
 }

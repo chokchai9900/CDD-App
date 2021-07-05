@@ -1,5 +1,7 @@
 {
   "name": "CDD-App",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
