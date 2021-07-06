@@ -3,7 +3,18 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig : {
+    apiKey: 'AIzaSyDQuKzYKrm5sh6Im3wEV3Uu4luyxt3vkdE',
+    authDomain: 'cdd-ion-app.firebaseapp.com',
+    databaseURL:
+      'https://cdd-ion-app-default-rtdb.asia-southeast1.firebasedatabase.app',
+    projectId: 'cdd-ion-app',
+    storageBucket: 'cdd-ion-app.appspot.com',
+    messagingSenderId: '849537382876',
+    appId: '1:849537382876:web:013cd86a27d48feb0a7719',
+    measurementId: 'G-2GG58SL0CJ',
+  },
 };
 
 /*

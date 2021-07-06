@@ -8,13 +8,14 @@ import { CreateProfilePageRoutingModule } from './create-profile-routing.module'
 
 import { CreateProfilePage } from './create-profile.page';
 
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CreateProfilePageRoutingModule
+    CreateProfilePageRoutingModule,
   ],
-  declarations: [CreateProfilePage]
+  declarations: [CreateProfilePage],
 })
 export class CreateProfilePageModule {}
