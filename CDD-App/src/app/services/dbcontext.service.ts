@@ -13,6 +13,7 @@ export class DBContextService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
   private url : string = 'https://cdd-api-net.herokuapp.com/api/';
+  // private url : string = 'https://localhost:44305/api/';
   constructor(private httpClient: HttpClient) { }
 
   //rate data API
