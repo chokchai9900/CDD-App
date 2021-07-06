@@ -8,19 +8,19 @@
 </ion-header>
 
 <ion-content class="background">
-  <div class="datapadding">
-    <p id="data">
-      - พัฒนาการสมวัย <br>
-      - ส่งเสริมพัฒนาการถัดไป <br>
-      - ประเมินอีกครั้งในช่วงอายุ 31 – 36 เดือน (2 ปี 7 เดือน - 3 ปี)
-    </p>
-  </div>
-
-  <div class="center">
-    <p id="text">
-      ไชโย! ผ่านประเมินค่ะ
-    </p>
-
-    <ion-button shape="round" class="textInButton">สรุปพัฒนาการ</ion-button>
-  </div>
+  <ng-container *ngIf="RateFullData">
+    <ng-container *ngIf="RateFullData.resultAfterRate">
+      <div class="datapadding">
+        <p>{{RateFullData.resultAfterRate.resultPass}}</p>
+      </div>
+    
+      <div class="center">
+        <p id="text">
+          ไชโย! ผ่านประเมินค่ะ
+        </p>
+    
+        <ion-button shape="round" class="textInButton">สรุปพัฒนาการ</ion-button>
+      </div>
+    </ng-container>
+</ng-container>
 </ion-content>

@@ -8,24 +8,26 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ng-container *ngIf="RateData">
-  <h4>{{RateData.rateTitle}} ({{RateData.rateType}})</h4>
-  <ion-card>
-    <ion-card-content>
-      <p>อุปกรณ์ : </p>
-      <div *ngIf="RateData.rateAssets">
-        <ion-img class="center" src="{{RateData.rateAssets[0]}}"></ion-img>
-      </div>
-      
-      <br>
-      <p>วิธีประเมิน </p>
-      <p>1. วางเชือกเป็นเส้นตรงบนพื้นหน้าตัวเด็ก<br>
-        2. กระโดดข้ามเชือกที่วางอยู่บนพื้นให้เด็กดู และบอกให้เด็กทำตาม</p>
-      <br>
-      <p>ผ่าน : </p>
-      <p>เด็กสามารถกระโดดข้ามเชือกได้โดยเท้าลงพื้นพร้อมกัน หรือเท้าไม่ต้องลงพื้นพร้อมกันก็ได้</p>
-    </ion-card-content>
-  </ion-card>
+  <ng-container *ngIf="RateFullData">
+  <h4>{{RateFullData.rateTitle}} ({{RateFullData.rateType}})</h4>
+  <ng-container *ngIf="RateFullData.rateData">
+    <ion-card>
+      <ion-card-content>
+        <p >อุปกรณ์ : {{RateFullData.rateData.equipment}}</p>
+        <div *ngIf="RateFullData.rateAssets">
+          <ion-img class="center" src="{{RateFullData.rateAssets}}"></ion-img>
+        </div>
+        
+        <br>
+        <p>วิธีประเมิน </p>
+        <p>{{RateFullData.rateData.howToRate}}</p>
+        <br>
+        <p>ผ่าน : </p>
+        <p >{{RateFullData.rateData.rule}}</p>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+  
 
   <div>
     <ion-grid>

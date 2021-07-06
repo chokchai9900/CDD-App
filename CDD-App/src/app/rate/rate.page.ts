@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { DataModel } from '../Models/RateDataModel';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { AfterRateModel, DataModel } from '../Models/RateDataModel';
+import { RateDataService } from '../rate-data.service';
 import { DBContextService } from '../services/dbcontext.service';
 
 @Component({
   selector: 'app-rate',
   templateUrl: './rate.page.html',
   styleUrls: ['./rate.page.scss'],
+  providers: [RateDataService]
 })
 export class RatePage implements OnInit {
 
@@ -15,9 +17,10 @@ export class RatePage implements OnInit {
   public yearage: number;
   public monthage: number;
   public fullmonth: number;
-  public RateData: DataModel;
+  public RateFullData: DataModel;
+  public AfterRateData : AfterRateModel;
 
-  constructor(private route: ActivatedRoute, private router: Router,private service: DBContextService) { 
+  constructor(private route: ActivatedRoute, private router: Router,private service: DBContextService,private getRateData :RateDataService) { 
     this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.ChildId = this.router.getCurrentNavigation().extras.state.id;
@@ -31,12 +34,32 @@ export class RatePage implements OnInit {
 
   ngOnInit() {
     this.service.getRateDataByAgeValidate(String(this.fullmonth),this.dataType).then((it :DataModel ) =>{
-      this.RateData = it;
+      this.RateFullData = it;
     })
+    
   }
   RateChild(isPass : boolean){
+    var routing :string;
     console.log(isPass);
-
+    this.service.RateChild(this.ChildId,String(this.fullmonth),this.dataType,isPass)
+    let navigationExtras: NavigationExtras = {
+      state: {
+        childId: this.ChildId,
+        fullmonth : this.fullmonth,
+        dataType: this.dataType
+      },
+    };
+    if (isPass) 
+    {
+      routing = 'pass'
+    } 
+    else 
+    {
+      routing = 'not-pass'
+    }
+    console.log(this.RateFullData.ResultAfterRate);
+    
+    this.router.navigate([routing], navigationExtras);
   }
 
 }

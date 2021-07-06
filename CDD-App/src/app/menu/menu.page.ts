@@ -26,6 +26,7 @@ export class MenuPage implements OnInit {
   ngOnInit() {
     console.log("menu page");
     this.dateCal();
+    
     console.log(this.fullmonth);
     console.log(this.childProfiledata);
   }

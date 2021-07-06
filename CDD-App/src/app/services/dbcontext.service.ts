@@ -56,12 +56,12 @@ export class DBContextService {
     let apiUrl = this.url + "RateResult/GetByID/" + id;
     return this.httpClient.get(apiUrl).toPromise();
   }
-  getResultChildByID(id:string){
+  getResultChildByID(id:string): Promise<any>{
     let apiUrl = this.url + "RateResult/GetByChildID/" + id;
     return this.httpClient.get(apiUrl).toPromise();
   }
   RateChild(childId: string,age: string,rateType: string,rate :boolean){
-    let apiUrl = this.url + "RateResult/GetByChildID/" + childId + "/" + age + "/" + rateType + "/" + rate;
+    let apiUrl = this.url + "RateResult/RateChild/" + childId + "/" + age + "/" + rateType + "/" + rate;
     return this.httpClient.put(apiUrl,null).toPromise();
   }
 }

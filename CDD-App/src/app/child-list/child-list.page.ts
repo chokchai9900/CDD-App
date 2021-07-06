@@ -11,13 +11,15 @@ export class ChildListPage implements OnInit {
   public ProfileData$ = Promise.resolve<any>([]);
   constructor(private service: DBContextService, private router: Router) {}
 
-  ngOnInit() {}
-
-  ionViewWillEnter() {
+  ngOnInit() {
     this.ProfileData$ = this.service.getProfileChild();
     this.ProfileData$.then((it: any) => {
       console.log(this.ProfileData$);
     });
+  }
+
+  ionViewWillEnter() {
+    
   }
   getDetail(data: any) {
     let navigationExtras: NavigationExtras = {
