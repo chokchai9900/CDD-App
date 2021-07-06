@@ -3,7 +3,7 @@ export class DataModel{
     RateTitle: string;
     RateType: string;
     RateData: RateModel;
-    RateValidate: string;
+    RateValidate: string[];
     RateAssets: string[];
     ResultAfterRate: AfterRateModel;
 }

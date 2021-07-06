@@ -26,7 +26,7 @@ export class DBContextService {
     return this.httpClient.get(apiUrl).toPromise();
   }
   getRateDataByAgeValidate(RateValidate: string,type: string): Promise<any>{
-    let apiUrl = this.url + "RateData/GetDataByAgeAndType/" + RateValidate + type;
+    let apiUrl = this.url + "RateData/GetDataByAgeAndType/" + RateValidate +"/"+ type;
     return this.httpClient.get(apiUrl).toPromise();
   }
   //profile API
@@ -35,7 +35,7 @@ export class DBContextService {
     return this.httpClient.get(apiUrl).toPromise();
   }
   getProfileChildById(_id: string): Promise<any>{
-    let apiUrl = this.url + "ProfileChild/GetById" + _id;
+    let apiUrl = this.url + "ProfileChild/GetById/" + _id;
     return this.httpClient.get(apiUrl).toPromise();
   }
   createProfileChild(data:any){
@@ -43,8 +43,8 @@ export class DBContextService {
     console.log(JSON.stringify(data));
     return this.httpClient.post(apiUrl,data).toPromise();
   }
-  UpdateProfileChild(data:any){
-    let apiUrl = this.url + "ProfileChild/Update?";
+  UpdateProfileChild(id:string,data:any){
+    let apiUrl = this.url + "ProfileChild/Update?" + id;
     return this.httpClient.put(apiUrl,data).toPromise();
   }
   deleteProfileChild(id:string){
@@ -53,15 +53,15 @@ export class DBContextService {
   }
   //rate result AIP
   getResultByID(id:string){
-    let apiUrl = this.url + "RateResult/GetByID" + id;
+    let apiUrl = this.url + "RateResult/GetByID/" + id;
     return this.httpClient.get(apiUrl).toPromise();
   }
   getResultChildByID(id:string){
-    let apiUrl = this.url + "RateResult/GetByChildID" + id;
+    let apiUrl = this.url + "RateResult/GetByChildID/" + id;
     return this.httpClient.get(apiUrl).toPromise();
   }
   RateChild(childId: string,age: string,rateType: string,rate :boolean){
-    let apiUrl = this.url + "RateResult/GetByChildID" + childId + age + rateType + rate;
+    let apiUrl = this.url + "RateResult/GetByChildID/" + childId + "/" + age + "/" + rateType + "/" + rate;
     return this.httpClient.put(apiUrl,null).toPromise();
   }
 }

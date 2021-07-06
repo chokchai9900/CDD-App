@@ -4,7 +4,7 @@
       <ion-back-button defaultHref="/child-list"></ion-back-button>
     </ion-buttons>
     <ion-title class="font">
-      <h4>x ปี xx เดือน</h4>
+      <h4>{{yearage}} ปี {{monthage}} เดือน</h4>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,23 +12,23 @@
 <ion-content class="font">
   <ion-grid>
     <ion-row class="center">
-      <ion-button id="gm" shape="round" [routerLink]="['/rate']" class="textInButton">
+      <ion-button id="gm" shape="round" (click)="NavigateRate('GM')" class="textInButton">
         พัฒนาการด้านการเคลื่อนไหว (GM)</ion-button>
     </ion-row>
     <ion-row class="center">
-      <ion-button id="fm" shape="round" [routerLink]="['/rate']" class="textInButton">
+      <ion-button id="fm" shape="round" (click)="NavigateRate('FM')" class="textInButton">
         พัฒนาการด้านกล้ามเนื้อมัดเล็กและสติปัญญา (FM)</ion-button>
     </ion-row>
     <ion-row class="center">
-      <ion-button id="rl" shape="round" [routerLink]="['/rate']" class="textInButton">
+      <ion-button id="rl" shape="round" (click)="NavigateRate('RL')" class="textInButton">
         พัฒนาการด้านการเข้าใจภาษา (RL)</ion-button>
     </ion-row>
     <ion-row class="center">
-      <ion-button id="el" shape="round" [routerLink]="['/rate']" class="textInButton">
+      <ion-button id="el" shape="round" (click)="NavigateRate('EL')" class="textInButton">
         พัฒนาการด้านการใช้ภาษา (EL)</ion-button>
     </ion-row>
     <ion-row class="center">
-      <ion-button id="ps" shape="round" [routerLink]="['/rate']" class="textInButton">
+      <ion-button id="ps" shape="round" (click)="NavigateRate('PS')" class="textInButton">
         พัฒนาการด้านการช่วยเหลือตนเองและสังคม (PS)</ion-button>
     </ion-row>
     <ion-row class="center">

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute , Router } from '@angular/router';
+import { ActivatedRoute , NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -38,6 +38,14 @@ export class ProfilePage implements OnInit {
       this.yearage = 0;
     }
     this.monthage = months % 12;
+  }
+  onClickNavigate(){
+    let navigationExtras: NavigationExtras  = {
+      state:{
+        data: this.childProfiledata
+      }
+    };
+    this.router.navigate(['menu'],navigationExtras)
   }
 
 }

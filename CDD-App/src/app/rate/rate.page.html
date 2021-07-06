@@ -3,16 +3,20 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/menu"></ion-back-button>
     </ion-buttons>
-    <ion-title>2 ปี 6 เดือน</ion-title>
+    <ion-title>{{yearage}} ปี {{monthage}} เดือน</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <h4>กระโดดข้ามเชือกบนพื้นไปข้างหน้าได้ (GM)</h4>
+  <ng-container *ngIf="RateData">
+  <h4>{{RateData.rateTitle}} ({{RateData.rateType}})</h4>
   <ion-card>
     <ion-card-content>
       <p>อุปกรณ์ : </p>
-      <ion-img class="center" src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"></ion-img>
+      <div *ngIf="RateData.rateAssets">
+        <ion-img class="center" src="{{RateData.rateAssets[0]}}"></ion-img>
+      </div>
+      
       <br>
       <p>วิธีประเมิน </p>
       <p>1. วางเชือกเป็นเส้นตรงบนพื้นหน้าตัวเด็ก<br>
@@ -27,18 +31,18 @@
     <ion-grid>
       <ion-row>
         <ion-col class="btn">
-          <ion-button shape="round" id="pass">
+          <ion-button shape="round" id="pass" (click)="RateChild(true)">
             ผ่าน
           </ion-button>
         </ion-col>
 
         <ion-col class="btn">
-          <ion-button shape="round" id="notpass">
+          <ion-button shape="round" id="notpass" (click)="RateChild(false)">
             ไม่ผ่าน
           </ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
   </div>
-
+</ng-container>
 </ion-content>
