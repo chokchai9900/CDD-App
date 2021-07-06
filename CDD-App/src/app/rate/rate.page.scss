@@ -68,6 +68,10 @@ h4 {
   width: 50%;
 }
 
+#title {
+  font-size: 18px;
+}
+
 @media screen and (min-width: 700px) and (max-width: 1700px) {
   ion-button {
     font-size: 30px;
@@ -81,13 +85,14 @@ h4 {
   }
 
   h4 {
-    font-size: 30px;
+    font-size: 35px;
     margin-left: 21px;
     margin-right: 25px;
   }
   p {
     font-size: 25px;
   }
+
   #pass {
     --background: #fdbc77;
     --color: black;
@@ -97,5 +102,9 @@ h4 {
     --background: #fa5757;
     --background-activated: rgb(252, 33, 33);
     --color: black;
+  }
+
+  #title {
+    font-size: 30px;
   }
 }

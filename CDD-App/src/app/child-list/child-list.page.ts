@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Type } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { DBContextService } from '../services/dbcontext.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-child-list',
@@ -9,7 +10,11 @@ import { DBContextService } from '../services/dbcontext.service';
 })
 export class ChildListPage implements OnInit {
   public ProfileData$ = Promise.resolve<any>([]);
-  constructor(private service: DBContextService, private router: Router) {}
+  constructor(
+    private service: DBContextService,
+    private router: Router,
+    private alertCtrl: AlertController
+  ) {}
 
   ngOnInit() {
     this.ProfileData$ = this.service.getProfileChild();
@@ -18,9 +23,34 @@ export class ChildListPage implements OnInit {
     });
   }
 
-  ionViewWillEnter() {
-    
+
+  async deleteProfile(id: string) {
+    let alert = this.alertCtrl.create({
+      message: 'ต้องการลบข้อมูลเด็กหรือไม่',
+      buttons: [
+        {
+          text: 'ยกเลิก',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          },
+        },
+        {
+          text: 'ตกลง',
+          handler: () => {
+            console.log('Deleted');
+            this.service.deleteProfileChild(id); //del rowfrom DB
+            this.refresh();
+          },
+        },
+      ],
+    });
+    (await alert).present();
   }
+  refresh(): void {
+    window.location.reload();
+  }
+
   getDetail(data: any) {
     let navigationExtras: NavigationExtras = {
       state: {
@@ -29,6 +59,7 @@ export class ChildListPage implements OnInit {
     };
     this.router.navigate(['profile'], navigationExtras);
   }
+
   editPrifile(data: any) {
     let navigationExtras: NavigationExtras = {
       state: {

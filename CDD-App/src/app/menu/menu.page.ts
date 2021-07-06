@@ -30,7 +30,6 @@ export class MenuPage implements OnInit {
     console.log(this.fullmonth);
     console.log(this.childProfiledata);
   }
-
   NavigateRate(type :string){
     let navigationExtras: NavigationExtras  = {
       state:{

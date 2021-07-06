@@ -44,11 +44,11 @@ export class DBContextService {
     return this.httpClient.post(apiUrl,data).toPromise();
   }
   UpdateProfileChild(id:string,data:any){
-    let apiUrl = this.url + "ProfileChild/Update?" + id;
+    let apiUrl = this.url + "ProfileChild/Update?id=" + id;
     return this.httpClient.put(apiUrl,data).toPromise();
   }
   deleteProfileChild(id:string){
-    let apiUrl = this.url + "ProfileChild/Delete?" + id;
+    let apiUrl = this.url + "ProfileChild/Delete?id=" + id;
     return this.httpClient.delete(apiUrl).toPromise();
   }
   //rate result AIP

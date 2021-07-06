@@ -47,7 +47,7 @@ export class CreateProfilePage implements OnInit {
   private ngFirestoreCollection: AngularFirestoreCollection<FILE>;
 
   imgUrl: string;
-  uploadUrl:string;
+  uploadUrl: string;
 
   // --------------------------------------
 
@@ -91,6 +91,7 @@ export class CreateProfilePage implements OnInit {
     });
     this.router.navigate(['child-list']);
   }
+
   saveAndGoMenu() {
     this.createProfile();
     let navigationExtras: NavigationExtras = {
