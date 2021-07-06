@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileModel } from '../Models/ProfileModel';
+import { NavigationExtras, Router } from '@angular/router';
+import { DBContextService } from '../services/dbcontext.service';
 
 @Component({
   selector: 'app-create-profile',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateProfilePage implements OnInit {
 
-  constructor() { }
+  private childName : string;
+  private childBirthday : Date;
+  private childGender : string;
+  private childProfileImg : string;
+  private childData : ProfileModel;
+
+  constructor(private service: DBContextService,private router: Router) { 
+    this.childData = new ProfileModel();
+  }
 
   ngOnInit() {
+  }
+
+  createProfile(){
+    this.childData.childName = this.childName;
+    this.childData.childBirthday = this.childBirthday;
+    this.childData.childGender = this.childGender;
+    this.childData.childProfileImg = this.childProfileImg;
+     console.log(this.childData);
+
+     this.service.createProfileChild(this.childData);
+     
   }
 
 }

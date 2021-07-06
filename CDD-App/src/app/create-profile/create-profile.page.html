@@ -14,21 +14,21 @@
       <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
     </ion-avatar>
   </ion-button>
-
+  
   <ion-card>
     <ion-card-content>
       <div class="margincard">
-        <ion-input type="text" slot="start" class="font-size">
+        <ion-input type="text" slot="start" class="font-size" [(ngModel)]="childName">
           <h2>ชื่อ </h2>
         </ion-input>
 
         <ion-item class="font-size">
           <ion-label>ว/ด/ป</ion-label>
-          <ion-datetime displayFormat="DD/MM/YYYY" value="2002-09-23T15:03:46.789">
+          <ion-datetime [(ngModel)]="childBirthday" displayFormat="DD/MM/YYYY" value="2002-09-23T15:03:46.789">
           </ion-datetime>
         </ion-item>
 
-        <ion-radio-group value="">
+        <ion-radio-group value="" [(ngModel)]="childGender">
           <h2>เพศ</h2>
           <ion-grid>
             <ion-row>
@@ -40,7 +40,7 @@
               </ion-col>
 
               <ion-col>
-                <ion-item class="font-size">
+                <ion-item class="font-size" >
                   <ion-label>หญิง</ion-label>
                   <ion-radio slot="start" value="female" color="danger"></ion-radio>
                 </ion-item>
@@ -54,7 +54,7 @@
         <ion-grid class="btn">
           <ion-row>
             <ion-col class="btn">
-              <ion-button id="btn">
+              <ion-button id="btn" type="submit" (click)="createProfile()">
                 บันทึก
               </ion-button>
             </ion-col>
