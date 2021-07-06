@@ -30,8 +30,21 @@ export class CreateProfilePage implements OnInit {
     this.childData.childProfileImg = this.childProfileImg;
      console.log(this.childData);
 
-     this.service.createProfileChild(this.childData);
+     this.service.createProfileChild(this.childData).then((it : ProfileModel) =>{
+      console.log(it);
+     });
      
+     
+     
+  }
+  saveAndGoMenu(){
+    this.createProfile();
+    let navigationExtras: NavigationExtras  = {
+      state:{
+        data: this.childData
+      }
+    };
+    this.router.navigate(['menu'],navigationExtras)
   }
 
 }
