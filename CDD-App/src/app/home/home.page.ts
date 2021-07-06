@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { DBContextService } from "../services/dbcontext.service";
 
 @Component({
@@ -8,12 +9,24 @@ import { DBContextService } from "../services/dbcontext.service";
 })
 export class HomePage {
 
-  public RateDatal$ = Promise.resolve<any>([]);
-
-  constructor(private service: DBContextService) {}
+  public ProfileData$ = Promise.resolve<any>([]);
+  constructor(private service: DBContextService,private router: Router) {}
 
   ngOnInit(){
-    this.RateDatal$ = this.service.getRateData();
-    console.log(this.RateDatal$);
   }
+
+  rountNextpage(){
+    this.ProfileData$ = this.service.getProfileChild();
+    this.ProfileData$.then((it :any) =>{
+      let count = it.length;
+      if (count == 0) {
+        this.router.navigateByUrl('/create-profile');
+      }
+      else{
+        this.router.navigateByUrl('/child-list');
+      }
+      console.log(count);
+    });
+  }
+
 }
