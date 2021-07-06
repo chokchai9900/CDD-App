@@ -11,24 +11,24 @@
 
   <ion-button id="avatar" class="center">
     <ion-avatar>
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      <img src="{{childProfiledata.childProfileImg}}">
     </ion-avatar>
   </ion-button>
 
   <ion-card>
     <ion-card-content>
       <div class="margincard">
-        <ion-input type="text" slot="start" class="font-size" value="เทส">
+        <ion-input type="text" slot="start" class="font-size" value="{{childProfiledata.childName}}">
           <h2>ชื่อ </h2>
         </ion-input>
 
         <ion-item class="item-native font-size">
           <ion-label>ว/ด/ป</ion-label>
-          <ion-datetime displayFormat="DD/MM/YYYY" value="2002-09-23T15:03:46.789">
+          <ion-datetime displayFormat="DD/MM/YYYY" value="{{childProfiledata.childBirthday}}">
           </ion-datetime>
         </ion-item>
 
-        <ion-radio-group value="male">
+        <ion-radio-group value="{{childProfiledata.childGender}}">
           <h2>เพศ</h2>
           <ion-grid>
             <ion-row>
