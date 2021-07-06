@@ -8,28 +8,31 @@ import { DBContextService } from '../services/dbcontext.service';
   styleUrls: ['./child-list.page.scss'],
 })
 export class ChildListPage implements OnInit {
+  public ProfileData$ = Promise.resolve<any>([]);
+  constructor(private service: DBContextService, private router: Router) {}
 
-  public ProfileData$ = Promise.resolve<any>([]) ; 
-  constructor(private service: DBContextService,private router: Router) { }
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
-
-  ionViewWillEnter(){
-    this.ProfileData$ = this.service.getProfileChild()
-    this.ProfileData$.then((it :any) =>{
+  ionViewWillEnter() {
+    this.ProfileData$ = this.service.getProfileChild();
+    this.ProfileData$.then((it: any) => {
       console.log(this.ProfileData$);
     });
-    
-    
   }
-  getDetail(data :any){
-    let navigationExtras: NavigationExtras  = {
-      state:{
-        data: data
-      }
+  getDetail(data: any) {
+    let navigationExtras: NavigationExtras = {
+      state: {
+        data: data,
+      },
     };
-    this.router.navigate(['profile'],navigationExtras)
+    this.router.navigate(['profile'], navigationExtras);
   }
-
+  editPrifile(data: any) {
+    let navigationExtras: NavigationExtras = {
+      state: {
+        data: data,
+      },
+    };
+    this.router.navigate(['edit-profile'], navigationExtras);
+  }
 }
