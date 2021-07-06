@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { DBContextService } from "../services/dbcontext.service";
+import { IonLoaderService } from '../ion-loader.service';
 
 @Component({
   selector: 'app-home',
@@ -10,9 +11,19 @@ import { DBContextService } from "../services/dbcontext.service";
 export class HomePage {
 
   public ProfileData$ = Promise.resolve<any>([]);
-  constructor(private service: DBContextService,private router: Router) {}
+  constructor(private service: DBContextService,private router: Router,private ionLoaderService: IonLoaderService) {}
 
   ngOnInit(){
+    this.displayAutoLoader();
+    this.hideLoader();
+  }
+
+  displayAutoLoader() {
+    this.ionLoaderService.autoLoader();
+  }
+
+  hideLoader() {
+    this.ionLoaderService.dismissLoader();
   }
 
   rountNextpage(){
