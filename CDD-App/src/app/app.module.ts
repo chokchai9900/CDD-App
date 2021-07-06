@@ -14,6 +14,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { FileSizePipe } from './file-size.pipe';
+import { RateDataService } from './rate-data.service';
 
 @NgModule({
   declarations: [AppComponent, FileSizePipe],
@@ -28,7 +29,7 @@ import { FileSizePipe } from './file-size.pipe';
     AngularFireStorageModule,
     AngularFirestoreModule,
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },RateDataService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

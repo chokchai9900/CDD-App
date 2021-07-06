@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute , NavigationExtras, Router } from '@angular/router';
+import { DBContextService } from '../services/dbcontext.service';
 
 @Component({
   selector: 'app-profile',
@@ -13,6 +14,8 @@ export class ProfilePage implements OnInit {
   public monthage: number;
   public yearage: number;
   public fullmonth: number
+  public exportData$ = Promise.resolve<any>([]) ; 
+  public 
 
   constructor(private route: ActivatedRoute, private router: Router) {
     this.route.queryParams.subscribe(params => {
@@ -46,6 +49,14 @@ export class ProfilePage implements OnInit {
       }
     };
     this.router.navigate(['menu'],navigationExtras)
+  }
+  onClickNavigateResult(){
+    let navigationExtras: NavigationExtras  = {
+      state:{
+        id: this.childProfiledata._id
+      }
+    };
+    this.router.navigate(['results'],navigationExtras)
   }
 
 }

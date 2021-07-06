@@ -89,6 +89,7 @@ export class CreateProfilePage implements OnInit {
     this.service.createProfileChild(this.childData).then((it: ProfileModel) => {
       console.log(it);
     });
+    this.router.navigate(['child-list']);
   }
 
   saveAndGoMenu() {

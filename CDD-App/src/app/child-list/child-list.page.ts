@@ -23,6 +23,7 @@ export class ChildListPage implements OnInit {
     });
   }
 
+
   async deleteProfile(id: string) {
     let alert = this.alertCtrl.create({
       message: 'ต้องการลบข้อมูลเด็กหรือไม่',
