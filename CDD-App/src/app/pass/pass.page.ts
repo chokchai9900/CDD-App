@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { AfterRateModel, DataModel } from '../Models/RateDataModel';
+import { AudioService } from '../services/audio.service';
 import { DBContextService } from '../services/dbcontext.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class PassPage implements OnInit {
   private dataType : string;
   public RateFullData: DataModel;
 
-  constructor(private route: ActivatedRoute, private router: Router,private service: DBContextService) {
+  constructor(private route: ActivatedRoute, private router: Router,private service: DBContextService,private audio: AudioService) {
     this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.childId = this.router.getCurrentNavigation().extras.state.childId;
@@ -32,6 +33,16 @@ export class PassPage implements OnInit {
       console.log(this.RateFullData);
       
     })
+    this.audio.preload('pass', 'assets/pass.m4a');
+    this.audio.play('pass');
+  }
+  onClickNavigateResult(){
+    let navigationExtras: NavigationExtras  = {
+      state:{
+        id: this.childId
+      }
+    };
+    this.router.navigate(['results'],navigationExtras)
   }
 
 }

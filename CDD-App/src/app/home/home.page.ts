@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { DBContextService } from "../services/dbcontext.service";
 import { IonLoaderService } from '../ion-loader.service';
+import { AudioService } from '../services/audio.service';
 
 @Component({
   selector: 'app-home',
@@ -11,11 +12,13 @@ import { IonLoaderService } from '../ion-loader.service';
 export class HomePage {
 
   public ProfileData$ = Promise.resolve<any>([]);
-  constructor(private service: DBContextService,private router: Router,private ionLoaderService: IonLoaderService) {}
+  constructor(private service: DBContextService,private router: Router,private ionLoaderService: IonLoaderService,private audio: AudioService) {}
 
   ngOnInit(){
     this.displayAutoLoader();
     this.hideLoader();
+    this.audio.preload('welcome', 'assets/welcome.m4a');
+    this.audio.play('welcome');
   }
 
   displayAutoLoader() {

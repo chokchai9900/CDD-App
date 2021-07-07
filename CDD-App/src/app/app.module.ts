@@ -15,6 +15,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { FileSizePipe } from './file-size.pipe';
 import { RateDataService } from './rate-data.service';
+import { NativeAudio } from '@ionic-native/native-audio/ngx';
+import { AudioService } from './services/audio.service';
 
 @NgModule({
   declarations: [AppComponent, FileSizePipe],
@@ -29,7 +31,7 @@ import { RateDataService } from './rate-data.service';
     AngularFireStorageModule,
     AngularFirestoreModule,
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },RateDataService],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },RateDataService,NativeAudio,AudioService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
