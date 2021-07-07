@@ -14,6 +14,10 @@
 
 <ion-content>
   <ng-container *ngIf="ProfileData$ | async as data">
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content>
+      </ion-refresher-content>
+    </ion-refresher>
     <div *ngFor="let item of data">
       <ion-item-sliding>
         <ion-item (click)="getDetail(item)">
