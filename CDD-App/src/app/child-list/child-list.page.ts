@@ -23,6 +23,16 @@ export class ChildListPage implements OnInit {
     });
   }
 
+  doRefresh(event) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+    window.location.reload();
+  }
+
 
   async deleteProfile(id: string) {
     let alert = this.alertCtrl.create({
@@ -40,13 +50,14 @@ export class ChildListPage implements OnInit {
           handler: () => {
             console.log('Deleted');
             this.service.deleteProfileChild(id); //del rowfrom DB
-            this.refresh();
+            // this.refresh();
           },
         },
       ],
     });
     (await alert).present();
   }
+
   refresh(): void {
     window.location.reload();
   }
