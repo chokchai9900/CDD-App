@@ -60,8 +60,8 @@ export class DBContextService {
     let apiUrl = this.url + "RateResult/GetByChildID/" + id;
     return this.httpClient.get(apiUrl).toPromise();
   }
-  RateChild(childId: string,age: string,rateType: string,rate :boolean){
-    let apiUrl = this.url + "RateResult/RateChild/" + childId + "/" + age + "/" + rateType + "/" + rate;
+  RateChild(childId: string,RateDataId : string,age: string,rateType: string,rate :boolean){
+    let apiUrl = this.url + "RateResult/RateChild/" + childId +"/"+ age + "/" + rateType + "/" + rate + "?RateDataId=" + RateDataId;
     return this.httpClient.put(apiUrl,null).toPromise();
   }
 }

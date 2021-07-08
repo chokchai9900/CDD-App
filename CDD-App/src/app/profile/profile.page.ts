@@ -17,7 +17,7 @@ export class ProfilePage implements OnInit {
   public exportData$ = Promise.resolve<any>([]) ; 
   public 
 
-  constructor(private route: ActivatedRoute, private router: Router) {
+  constructor(private route: ActivatedRoute, private router: Router,private service: DBContextService) {
     this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.childProfiledata = this.router.getCurrentNavigation().extras.state.data;
@@ -50,13 +50,18 @@ export class ProfilePage implements OnInit {
     };
     this.router.navigate(['menu'],navigationExtras)
   }
+  /////////////////////////////////////////////
   onClickNavigateResult(){
-    let navigationExtras: NavigationExtras  = {
-      state:{
-        id: this.childProfiledata._id
-      }
-    };
-    this.router.navigate(['results'],navigationExtras)
+    this.service.getResultChildByID(this.childProfiledata._id).then((it : any) => {
+      let navigationExtras: NavigationExtras  = {
+        state:{
+          data: it,
+        }
+      };
+      this.router.navigate(['results'],navigationExtras)
+    });
+    
   }
+
 
 }

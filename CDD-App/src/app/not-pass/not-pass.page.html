@@ -8,24 +8,32 @@
 </ion-header>
 
 <ion-content class="background">
-  <ng-container *ngIf="RateFullData">
-    <ng-container *ngIf="RateFullData.resultAfterRate">
+  <ng-container *ngIf="RateResultData">
 
-      <p>{{RateFullData.resultAfterRate.resultNotPass}}</p>
+    <ion-slides *ngFor="let item of RateResultData">
 
-  <p *ngIf="RateFullData.resultAfterRate.replaceEquipment">วัสดุที่ใช้แทนได้ : {{RateFullData.resultAfterRate.replaceEquipment}}</p>
+      <ion-slide>
+        <div class="slide">
 
-  <p *ngIf="RateFullData.resultAfterRate.objective">วัตถุประสงค์ : {{RateFullData.resultAfterRate.objective}}</p>
+          <p>{{item.resultAfterRate.resultNotPass}}</p>
 
-  <div class="center">
-    <p id="text">
-      ไม่เป็นไรนะคะ อย่าลืมฝึกทักษะบ่อยๆ<br>แล้วอีก 1 เดือน ประเมินกันใหม่ค่ะ
-    </p>
+          <p *ngIf="item.resultAfterRate.replaceEquipment">วัสดุที่ใช้แทนได้ :
+            {{item.resultAfterRate.replaceEquipment}}</p>
 
-    <ion-button shape="round" class="textInButton" (click)="onClickNavigateResult()">
-      สรุปพัฒนาการ
-    </ion-button>
-  </div>
-</ng-container>
-</ng-container>
+          <p *ngIf="item.resultAfterRate.objective">วัตถุประสงค์ : {{RateFullData.resultAfterRate.objective}}
+          </p>
+
+          <div class="center">
+            <p id="text">
+              ไม่เป็นไรนะคะ อย่าลืมฝึกทักษะบ่อยๆ<br>แล้วอีก 1 เดือน ประเมินกันใหม่ค่ะ
+            </p>
+          </div>
+
+        </div>
+      </ion-slide>
+
+    </ion-slides>
+
+
+  </ng-container>
 </ion-content>

@@ -1,11 +1,12 @@
 export class ResultModel{
     _id: string;
     ChildId: string;
-    ResultData: RateResultModel[];
+    resultData: RateResultModel[];
 }
 
 export class RateResultModel{
+    rateDataId:string;
     age: string;
-    RateType: string;
+    rateType: string;
     isPass: boolean;
 }

@@ -16,10 +16,10 @@ p {
   padding-right: 50px;
 }
 .iconmargin {
-  margin-left: -55%;
+  margin-left: -25%;
 }
 .titlemargin {
-  margin-right: -40%;
+  margin-right: -30%;
 }
 .icon-pass {
   height: 15px;
@@ -38,10 +38,15 @@ p {
   --background-activated: #ff9b31;
   --color: black;
 }
+#butt {
+  margin-top: -10px;
+  --background: var(--ion-background-color);
+  --background-activated: var(--ion-background-color);
+  --box-shadow: var(--ion-background-color) 0px 0px 0px;
+}
 
 ion-button {
   font-size: 20px;
-  margin: 15px;
 }
 
 .center {
@@ -58,7 +63,6 @@ ion-button {
   }
   ion-button {
     font-size: 30px;
-    margin: 15px;
   }
   .icon-pass {
     height: 20px;

@@ -4,18 +4,19 @@
       <ion-icon name="arrow-back-outline"></ion-icon>
     </ion-buttons>
     <ion-title class="font">
-      <h4>พัฒนาการด้านการเคลื่อนไหว (GM)</h4>
+      <h4>{{dataTypeDiscription}}</h4>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="font">
-  <ion-grid>
-    <!-- <div *ngFor=""> -->
-      <ion-row class="center">
-        <ion-button id="result" shape="round" class="textInButton">
-          กระโดดเชือกได้ (GM)</ion-button>
-      </ion-row>
-    <!-- </div> -->
-  </ion-grid>
+  <ng-container *ngIf="currenctData$">
+    <ion-grid>
+      <div *ngFor="let item of currenctData$">
+        <ion-row class="center">
+          <ion-button id="result" shape="round" class="textInButton" (click)="onClick(item)">{{ item.rateTitle }}</ion-button>
+        </ion-row>
+      </div>
+    </ion-grid>
+  </ng-container>
 </ion-content>

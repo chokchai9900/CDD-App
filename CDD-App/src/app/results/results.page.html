@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content  [fullscreen]="true">
+<ion-content [fullscreen]="true">
   <div class="ion-padding">
     <canvas #barCanvas></canvas>
   </div>
@@ -23,8 +23,10 @@
         </ion-col>
         <!-- icon status -->
         <ion-col>
-          <ion-icon class="icon-pass" name="ellipse"  *ngIf="GMPass"></ion-icon>
-          <ion-icon class="icon-notpass" name="ellipse" *ngIf="!GMPass"></ion-icon>
+          <ion-button  id="butt" (click)="onclickt('GM',GMPass)">
+            <ion-icon class="icon-pass" name="ellipse" *ngIf="GMPass"></ion-icon>
+            <ion-icon class="icon-notpass" name="ellipse" *ngIf="!GMPass"></ion-icon>
+          </ion-button>
         </ion-col>
         <!-- status -->
         <ion-col class="iconmargin" *ngIf="GMPass">
@@ -48,8 +50,10 @@
         </ion-col>
         <!-- icon status -->
         <ion-col>
-          <ion-icon class="icon-pass" name="ellipse"  *ngIf="FMPass"></ion-icon>
-          <ion-icon class="icon-notpass" name="ellipse" *ngIf="!FMPass"></ion-icon>
+          <ion-button  id="butt" class="btn" (click)="onclickt('FM',FMPass)">
+            <ion-icon class="icon-pass" name="ellipse" *ngIf="FMPass"></ion-icon>
+            <ion-icon class="icon-notpass" name="ellipse" *ngIf="!FMPass"></ion-icon>
+          </ion-button>
         </ion-col>
         <!-- status -->
         <ion-col class="iconmargin" *ngIf="FMPass">
@@ -73,8 +77,11 @@
         </ion-col>
         <!-- icon status -->
         <ion-col>
-          <ion-icon class="icon-pass" name="ellipse"  *ngIf="RLPass"></ion-icon>
-          <ion-icon class="icon-notpass" name="ellipse" *ngIf="!RLPass"></ion-icon>
+          <ion-button  id="butt" class="btn" (click)="onclickt('RL',RLPass)">
+            <ion-icon class="icon-pass" name="ellipse" *ngIf="RLPass"></ion-icon>
+            <ion-icon class="icon-notpass" name="ellipse" *ngIf="!RLPass"></ion-icon>
+          </ion-button>
+
         </ion-col>
         <!-- status -->
         <ion-col class="iconmargin" *ngIf="RLPass">
@@ -98,8 +105,10 @@
         </ion-col>
         <!-- icon status -->
         <ion-col>
-          <ion-icon class="icon-pass" name="ellipse"  *ngIf="ELPass"></ion-icon>
-          <ion-icon class="icon-notpass" name="ellipse" *ngIf="!ELPass"></ion-icon>
+          <ion-button id="butt" class="btn" (click)="onclickt('EL',ELPass)">
+            <ion-icon class="icon-pass" name="ellipse" *ngIf="ELPass"></ion-icon>
+            <ion-icon class="icon-notpass" name="ellipse" *ngIf="!ELPass"></ion-icon>
+          </ion-button>
         </ion-col>
         <!-- status -->
         <ion-col class="iconmargin" *ngIf="ELPass">
@@ -123,8 +132,10 @@
         </ion-col>
         <!-- icon status -->
         <ion-col>
-          <ion-icon class="icon-pass" name="ellipse"  *ngIf="PSPass"></ion-icon>
-          <ion-icon class="icon-notpass" name="ellipse" *ngIf="!PSPass"></ion-icon>
+          <ion-button id="butt" class="btn" (click)="onclickt('PS',PSPass)">
+            <ion-icon class="icon-pass" name="ellipse" *ngIf="PSPass"></ion-icon>
+            <ion-icon class="icon-notpass" name="ellipse" *ngIf="!PSPass"></ion-icon>
+          </ion-button>
         </ion-col>
         <!-- status -->
         <ion-col class="iconmargin" *ngIf="PSPass">

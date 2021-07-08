@@ -8,19 +8,16 @@
 </ion-header>
 
 <ion-content class="background">
-  <ng-container *ngIf="RateFullData">
-    <ng-container *ngIf="RateFullData.resultAfterRate">
+  <ion-content>
+    <ng-container *ngIf="RateResultData">
       <div class="datapadding">
-        <p>{{RateFullData.resultAfterRate.resultPass}}</p>
+        <p>{{RateResultData[0].resultAfterRate.resultPass}}</p>
       </div>
-    
+
       <div class="center">
         <p id="text">
           ไชโย! ผ่านประเมินค่ะ
         </p>
-    
-        <ion-button shape="round" class="textInButton" (click)="onClickNavigateResult()">สรุปพัฒนาการ</ion-button>
       </div>
     </ng-container>
-</ng-container>
-</ion-content>
+  </ion-content>
