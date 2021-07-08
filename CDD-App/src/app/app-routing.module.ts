@@ -50,7 +50,11 @@ const routes: Routes = [
   {
     path: 'child-list',
     loadChildren: () => import('./child-list/child-list.module').then( m => m.ChildListPageModule)
+  },  {
+    path: 'rate-menu',
+    loadChildren: () => import('./rate-menu/rate-menu.module').then( m => m.RateMenuPageModule)
   },
+
 
 ];
 

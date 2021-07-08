@@ -40,7 +40,7 @@ export class MenuPage implements OnInit {
         fullmonth: this.fullmonth
       }
     };
-    this.router.navigate(['rate'],navigationExtras)
+    this.router.navigate(['rate-menu'],navigationExtras)
   }
 
   dateCal(){
