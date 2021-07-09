@@ -46,7 +46,13 @@ export class ResultsPage implements OnInit {
 
   ngOnInit() {
     var x = this.data.resultData.sort((a, b) => (a.age > b.age ? 1 : -1));
-    this.calResult(x);
+    // this.calResult(x);
+
+    var maxval = x[x.length -1].age;
+    console.log(maxval);
+    
+
+    this.func(x,maxval);
 
     console.log(x);
 
@@ -57,15 +63,14 @@ export class ResultsPage implements OnInit {
       this.EL_Value,
       this.PS_Value,
     ].sort((a, b) => (a < b ? 1 : -1))[0];
-    
-    console.log(showResult);
-    
 
-    this.validateResult(this.GM_Value,showResult,"GM");
-    this.validateResult(this.FM_Value,showResult,"FM");
-    this.validateResult(this.RL_Value,showResult,"RL");
-    this.validateResult(this.EL_Value,showResult,"EL");
-    this.validateResult(this.PS_Value,showResult,"PS");
+    console.log(showResult);
+
+    this.validateResult(this.GM_Value, showResult, 'GM');
+    this.validateResult(this.FM_Value, showResult, 'FM');
+    this.validateResult(this.RL_Value, showResult, 'RL');
+    this.validateResult(this.EL_Value, showResult, 'EL');
+    this.validateResult(this.PS_Value, showResult, 'PS');
 
     console.log(this.GMPass);
     console.log(this.FMPass);
@@ -73,44 +78,120 @@ export class ResultsPage implements OnInit {
     console.log(this.ELPass);
     console.log(this.PSPass);
 
+
+    console.log("test value");
+    
     console.log(this.GM_Value);
     console.log(this.FM_Value);
     console.log(this.RL_Value);
     console.log(this.EL_Value);
     console.log(this.PS_Value);
     console.log(showResult);
-
-
-
   }
 
-  onclickt(type: string,result: boolean){
-    var passResult = "";
-      if (result) {
-        passResult = "pass"
-      }else{
-        passResult = "not-pass"
+  func(x: RateResultModel[],maxval : string){
+
+    var val = Number(maxval);
+    if (val >= 30) {
+      console.log("Age 30");
+      if (!x.some(it => it.isPass === false && Number(it.age) <= 30 && it.rateType === "GM")) {
+        this.GM_Value = 1;
       }
-    var max = this.data.resultData.sort((a, b) => (a.age < b.age ? 1 : -1)).find(it => it.rateType == type);
-    this.service.getRateDataByAgeValidate(max.age,max.rateType).then((it : DataModel[]) => {
-      let navigationExtras: NavigationExtras  = {
-        state:{
-          data: it,
-        }
-      };
-      console.log(it);
-      
-      
-      this.router.navigate([passResult],navigationExtras)
-    });
+      if (!x.some(it => it.isPass === false && Number(it.age) <= 30 && it.rateType === "FM")) {
+        this.FM_Value = 1;
+      }
+      if (!x.some(it => it.isPass === false && Number(it.age) <= 30 && it.rateType === "RL")) {
+        this.RL_Value = 1;
+      }
+      if (!x.some(it => it.isPass === false && Number(it.age) <= 30 && it.rateType === "EL")) {
+        this.EL_Value = 1;
+      }
+      if (!x.some(it => it.isPass === false && Number(it.age) <= 30 && it.rateType === "PS")) {
+        this.PS_Value = 1;
+      }
+    } else if (val > 30 && val < 37) {
+      console.log("Age 31-36");
+      if (!x.some(it => it.isPass === false && Number(it.age) > 30 && Number(it.age) < 37 && it.rateType === "GM")) {
+        this.GM_Value = 2;
+      }
+      if (!x.some(it => it.isPass === false && Number(it.age) > 30 && Number(it.age) < 37 && it.rateType === "FM")) {
+        this.FM_Value = 2;
+      }
+      if (!x.some(it => it.isPass === false && Number(it.age) > 30 && Number(it.age) < 37 && it.rateType === "RL")) {
+        this.RL_Value = 2;
+      }
+      if (!x.some(it => it.isPass === false && Number(it.age) > 30 && Number(it.age) < 37 && it.rateType === "EL")) {
+        this.EL_Value = 2;
+      }
+      if (!x.some(it => it.isPass === false && Number(it.age) > 30 && Number(it.age) < 37 && it.rateType === "PS")) {
+        this.PS_Value = 2;
+      }
+    } else if (val > 36 && val < 42) {
+      console.log("Age 37-41");
+      if (!x.some(it => it.isPass === false && Number(it.age) > 36 && Number(it.age) < 42 && it.rateType === "GM")) {
+        this.GM_Value = 3;
+      }
+      if (!x.some(it => it.isPass === false && Number(it.age) > 36 && Number(it.age) < 42 && it.rateType === "FM")) {
+        this.FM_Value = 3;
+      }
+      if (!x.some(it => it.isPass === false && Number(it.age) > 36 && Number(it.age) < 42 && it.rateType === "RL")) {
+        this.RL_Value = 3;
+      }
+      if (!x.some(it => it.isPass === false && Number(it.age) > 36 && Number(it.age) < 42 && it.rateType === "EL")) {
+        this.EL_Value = 3;
+      }
+      if (!x.some(it => it.isPass === false && Number(it.age) > 36 && Number(it.age) < 42 && it.rateType === "PS")) {
+        this.PS_Value = 3;
+      }
+    } else if (val >= 42) {
+      console.log("Age 42");
+      if (!x.some(it => it.isPass === false && Number(it.age) >= 42 && it.rateType === "GM")) {
+        this.GM_Value = 4;
+      }
+      if (!x.some(it => it.isPass === false && Number(it.age) >= 42 && it.rateType === "FM")) {
+        this.FM_Value = 4;
+      }
+      if (!x.some(it => it.isPass === false && Number(it.age) >= 42 && it.rateType === "RL")) {
+        this.RL_Value = 4;
+      }
+      if (!x.some(it => it.isPass === false && Number(it.age) >= 42 && it.rateType === "EL")) {
+        this.EL_Value = 4;
+      }
+      if (!x.some(it => it.isPass === false && Number(it.age) >= 42 && it.rateType === "PS")) {
+        this.PS_Value = 4;
+      }
+    }
+  }
+
+  onclickt(type: string, result: boolean) {
+    var passResult = '';
+    if (result) {
+      passResult = 'pass';
+    } else {
+      passResult = 'not-pass';
+    }
+    var max = this.data.resultData
+      .sort((a, b) => (a.age < b.age ? 1 : -1))
+      .find((it) => it.rateType == type);
+    this.service
+      .getRateDataByAgeValidate(max.age, max.rateType)
+      .then((it: DataModel[]) => {
+        let navigationExtras: NavigationExtras = {
+          state: {
+            data: it,
+          },
+        };
+        console.log(it);
+
+        this.router.navigate([passResult], navigationExtras);
+      });
     console.log(max);
     console.log(type);
-    
   }
 
   validateResult(x: number, y: number, stage: string) {
     switch (stage) {
-      case "GM": {
+      case 'GM': {
         if (x != y) {
           this.GMPass = false;
         } else if (x == y) {
@@ -118,7 +199,7 @@ export class ResultsPage implements OnInit {
         }
         break;
       }
-      case "FM": {
+      case 'FM': {
         if (x != y) {
           this.FMPass = false;
         } else if (x == y) {
@@ -126,7 +207,7 @@ export class ResultsPage implements OnInit {
         }
         break;
       }
-      case "RL": {
+      case 'RL': {
         if (x != y) {
           this.RLPass = false;
         } else if (x == y) {
@@ -134,7 +215,7 @@ export class ResultsPage implements OnInit {
         }
         break;
       }
-      case "EL": {
+      case 'EL': {
         if (x != y) {
           this.ELPass = false;
         } else if (x == y) {
@@ -142,7 +223,7 @@ export class ResultsPage implements OnInit {
         }
         break;
       }
-      case "PS": {
+      case 'PS': {
         if (x != y) {
           this.PSPass = false;
         } else if (x == y) {
@@ -194,7 +275,7 @@ export class ResultsPage implements OnInit {
       },
       options: {
         plugins: {
-          tooltip:{
+          tooltip: {
             enabled: false,
           },
           legend: {
@@ -244,37 +325,56 @@ export class ResultsPage implements OnInit {
       if (Number(element.age) <= 30) {
         if (element.rateType == 'GM') {
           if (element.isPass == true) {
-            this.GM_Value += 1;
+            this.GM_Value = 1;
           } else {
-            this.GM_Value -= 1;
+            if (this.GM_Value == 0) {
+            } else {
+              this.GM_Value -= 1;
+            }
           }
         }
         if (element.rateType == 'FM') {
           if (element.isPass == true) {
-            this.FM_Value += 1;
-          } else {
-            this.FM_Value -= 1;
+            this.FM_Value = 1;
+          }
+          else {
+            if (this.FM_Value == 0) {
+            } else {
+              this.FM_Value -= 1;
+            }
           }
         }
         if (element.rateType == 'RL') {
           if (element.isPass == true) {
-            this.RL_Value += 1;
-          } else {
-            this.RL_Value -= 1;
+            this.RL_Value = 1;
+          }
+          else {
+            if (this.RL_Value == 0) {
+            } else {
+              this.RL_Value -= 1;
+            }
           }
         }
         if (element.rateType == 'EL') {
           if (element.isPass == true) {
-            this.EL_Value += 1;
-          } else {
-            this.EL_Value -= 1;
+            this.EL_Value = 1;
+          }
+          else {
+            if (this.EL_Value == 0) {
+            } else {
+              this.EL_Value -= 1;
+            }
           }
         }
         if (element.rateType == 'PS') {
           if (element.isPass == true) {
-            this.PS_Value += 1;
-          } else {
-            this.PS_Value -= 1;
+            this.PS_Value = 1;
+          }
+          else {
+            if (this.PS_Value == 0) {
+            } else {
+              this.PS_Value -= 1;
+            }
           }
         }
       }
@@ -284,41 +384,41 @@ export class ResultsPage implements OnInit {
           if (element.isPass == true) {
             this.GM_Value = 2;
           }
-          // else{
-          //   this.GM_Value =- 1;
-          // }
+          else{
+            this.GM_Value -= 1;
+          }
         }
         if (element.rateType == 'FM') {
           if (element.isPass == true) {
             this.FM_Value = 2;
           }
-          // else{
-          //   this.FM_Value =- 1;
-          // }
+          else{
+            this.FM_Value -= 1;
+          }
         }
         if (element.rateType == 'RL') {
           if (element.isPass == true) {
             this.RL_Value = 2;
           }
-          // else{
-          //   this.RL_Value =- 1;
-          // }
+          else{
+            this.RL_Value -= 1;
+          }
         }
         if (element.rateType == 'EL') {
           if (element.isPass == true) {
             this.EL_Value = 2;
           }
-          // else{
-          //   this.EL_Value =- 1;
-          // }
+          else{
+            this.EL_Value -= 1;
+          }
         }
         if (element.rateType == 'PS') {
           if (element.isPass == true) {
             this.PS_Value = 2;
           }
-          // else{
-          //   this.PS_Value =- 1;
-          // }
+          else{
+            this.PS_Value -= 1;
+          }
         }
       }
       //Age 36 - 42
@@ -327,41 +427,41 @@ export class ResultsPage implements OnInit {
           if (element.isPass == true) {
             this.GM_Value = 3;
           }
-          // else{
-          //   this.GM_Value =- 1;
-          // }
+          else{
+            this.GM_Value -= 1;
+          }
         }
         if (element.rateType == 'FM') {
           if (element.isPass == true) {
             this.FM_Value = 3;
           }
-          // else{
-          //   this.FM_Value =- 1;
-          // }
+          else{
+            this.FM_Value -= 1;
+          }
         }
         if (element.rateType == 'RL') {
           if (element.isPass == true) {
             this.RL_Value = 3;
           }
-          // else{
-          //   this.RL_Value =- 1;
-          // }
+          else{
+            this.RL_Value -= 1;
+          }
         }
         if (element.rateType == 'EL') {
           if (element.isPass == true) {
             this.EL_Value = 3;
           }
-          // else{
-          //   this.EL_Value =- 1;
-          // }
+          else{
+            this.EL_Value -= 1;
+          }
         }
         if (element.rateType == 'PS') {
           if (element.isPass == true) {
             this.PS_Value = 3;
           }
-          // else{
-          //   this.PS_Value =- 1;
-          // }
+          else{
+            this.PS_Value -= 1;
+          }
         }
       }
       //Age >42
@@ -370,41 +470,41 @@ export class ResultsPage implements OnInit {
           if (element.isPass == true) {
             this.GM_Value = 4;
           }
-          // else{
-          //   this.GM_Value =- 1;
-          // }
+          else{
+            this.GM_Value -= 1;
+          }
         }
         if (element.rateType == 'FM') {
           if (element.isPass == true) {
             this.FM_Value = 4;
           }
-          // else{
-          //   this.FM_Value =- 1;
-          // }
+          else{
+            this.FM_Value -= 1;
+          }
         }
         if (element.rateType == 'RL') {
           if (element.isPass == true) {
             this.RL_Value = 4;
           }
-          // else{
-          //   this.RL_Value =- 1;
-          // }
+          else{
+            this.RL_Value -= 1;
+          }
         }
         if (element.rateType == 'EL') {
           if (element.isPass == true) {
             this.EL_Value = 4;
           }
-          // else{
-          //   this.EL_Value =- 1;
-          // }
+          else{
+            this.EL_Value -= 1;
+          }
         }
         if (element.rateType == 'PS') {
           if (element.isPass == true) {
             this.PS_Value = 4;
           }
-          // else{
-          //   this.PS_Value =- 1;
-          // }
+          else{
+            this.PS_Value -= 1;
+          }
         }
       }
     }

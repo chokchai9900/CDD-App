@@ -3,6 +3,7 @@ import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { AfterRateModel, DataModel } from '../Models/RateDataModel';
 import { RateDataService } from '../rate-data.service';
 import { DBContextService } from '../services/dbcontext.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-rate',
@@ -21,7 +22,7 @@ export class RatePage implements OnInit {
 
   public RateFullData: any;
 
-  constructor(private route: ActivatedRoute, private router: Router,private service: DBContextService,private getRateData :RateDataService) { 
+  constructor(private route: ActivatedRoute, private router: Router,private service: DBContextService,private getRateData :RateDataService,private navCtrl: NavController) { 
     this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.RateFullData = this.router.getCurrentNavigation().extras.state.data;
@@ -61,7 +62,7 @@ export class RatePage implements OnInit {
     // }
     // console.log(this.RateFullData.ResultAfterRate);
     
-    // this.router.navigate([routing], navigationExtras);
+    this.navCtrl.back();
   }
 
 }

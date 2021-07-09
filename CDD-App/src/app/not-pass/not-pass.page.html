@@ -10,9 +10,9 @@
 <ion-content class="background">
   <ng-container *ngIf="RateResultData">
 
-    <ion-slides *ngFor="let item of RateResultData">
+    <ion-slides>
 
-      <ion-slide>
+      <ion-slide *ngFor="let item of RateResultData">
         <div class="slide">
 
           <p>{{item.resultAfterRate.resultNotPass}}</p>
@@ -20,7 +20,7 @@
           <p *ngIf="item.resultAfterRate.replaceEquipment">วัสดุที่ใช้แทนได้ :
             {{item.resultAfterRate.replaceEquipment}}</p>
 
-          <p *ngIf="item.resultAfterRate.objective">วัตถุประสงค์ : {{RateFullData.resultAfterRate.objective}}
+          <p *ngIf="item.resultAfterRate.objective">วัตถุประสงค์ : {{item.resultAfterRate.objective}}
           </p>
 
           <div class="center">

@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/menu"></ion-back-button>
+    <ion-buttons slot="start" [routerLink]="['/rate-menu']" >
+      <ion-icon name="arrow-back-outline"></ion-icon>
     </ion-buttons>
     <ion-title>{{yearage}} ปี {{monthage}} เดือน</ion-title>
   </ion-toolbar>
@@ -9,51 +9,53 @@
 
 <ion-content [fullscreen]="true">
   <ng-container *ngIf="RateFullData">
-  <h4>{{RateFullData.rateTitle}} ({{RateFullData.rateType}})</h4>
-  <ng-container *ngIf="RateFullData.rateData">
-    <ion-card>
-      <ion-card-content>
-        <p id="title" *ngIf="RateFullData.rateData.equipment">อุปกรณ์ : </p>
-        <p>{{RateFullData.rateData.equipment}}</p>
-        <div *ngIf="RateFullData.rateAssets">
-          <ion-img class="center" src="{{RateFullData.rateAssets}}"></ion-img>
-        </div>
-        
-        <br>
-        <p id="title" *ngIf="RateFullData.rateData.howToRate">วิธีประเมิน </p>
-        <p>{{RateFullData.rateData.howToRate}}</p>
-        <br>
-        <div *ngIf="RateFullData.rateID == 'dcd4b4b1-e7bb-4714-8838-0ecc0b12187a'">
-          <P>ตัวอย่าง เส้นวงต่อเนื่อง</P>
-          <ion-img class="center" src="https://firebasestorage.googleapis.com/v0/b/cdd-ion-app.appspot.com/o/FM2ปี7เดือน.png?alt=media&token=5c4b31a3-6ca5-4a8b-a715-7b0277e2ce9c"></ion-img>
-        </div>
+    <h4>{{RateFullData.rateTitle}} ({{RateFullData.rateType}})</h4>
+    <ng-container *ngIf="RateFullData.rateData">
+      <ion-card>
+        <ion-card-content>
+          <p id="title" *ngIf="RateFullData.rateData.equipment">อุปกรณ์ : </p>
+          <p>{{RateFullData.rateData.equipment}}</p>
+          <div *ngIf="RateFullData.rateAssets">
+            <ion-img class="center" src="{{RateFullData.rateAssets}}"></ion-img>
+          </div>
 
-        <p id="title" *ngIf="RateFullData.rateData.rule">ผ่าน : </p>
-        <p >{{RateFullData.rateData.rule}}</p>
+          <br>
+          <p id="title" *ngIf="RateFullData.rateData.howToRate">วิธีประเมิน </p>
+          <p>{{RateFullData.rateData.howToRate}}</p>
+          <br>
+          <div *ngIf="RateFullData.rateID == 'dcd4b4b1-e7bb-4714-8838-0ecc0b12187a'">
+            <P>ตัวอย่าง เส้นวงต่อเนื่อง</P>
+            <ion-img id="ex" class="center"
+              src="https://firebasestorage.googleapis.com/v0/b/cdd-ion-app.appspot.com/o/FM2%E0%B8%9B%E0%B8%B57%E0%B9%80%E0%B8%94%E0%B8%B7%E0%B8%AD%E0%B8%99.png?alt=media&token=5cb5ff18-4796-4e9e-891c-730185ee719b">
+            </ion-img>
+          </div>
 
-        
+          <p id="title" *ngIf="RateFullData.rateData.rule">ผ่าน : </p>
+          <p>{{RateFullData.rateData.rule}}</p>
 
-      </ion-card-content>
-    </ion-card>
+
+
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+
+
+    <div>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="btn">
+            <ion-button shape="round" id="pass" (click)="RateChild(true)">
+              ผ่าน
+            </ion-button>
+          </ion-col>
+
+          <ion-col class="btn">
+            <ion-button shape="round" id="notpass" (click)="RateChild(false)">
+              ไม่ผ่าน
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
   </ng-container>
-
-
-  <div>
-    <ion-grid>
-      <ion-row>
-        <ion-col class="btn">
-          <ion-button shape="round" id="pass" (click)="RateChild(true)">
-            ผ่าน
-          </ion-button>
-        </ion-col>
-
-        <ion-col class="btn">
-          <ion-button shape="round" id="notpass" (click)="RateChild(false)">
-            ไม่ผ่าน
-          </ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
-</ng-container>
 </ion-content>

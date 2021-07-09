@@ -38,6 +38,10 @@ ion-img {
   text-align: center;
 }
 
+#ex {
+  width: 200px;
+}
+
 .font-size {
   font-size: 20px;
 }
@@ -53,11 +57,13 @@ h4 {
 
 #pass {
   --background: #fdbc77;
+  --background-activated: #ff9b31;
   --color: black;
 }
 
 #notpass {
   --background: #fa5757;
+  --background-activated: #fd4343;
   --color: black;
 }
 
@@ -82,6 +88,10 @@ h4 {
     height: 200px;
     width: auto;
     text-align: center;
+  }
+
+  #ex {
+    width: 250px;
   }
 
   h4 {
