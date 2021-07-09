@@ -46,7 +46,6 @@ export class ResultsPage implements OnInit {
 
   ngOnInit() {
     var x = this.data.resultData.sort((a, b) => (a.age > b.age ? 1 : -1));
-    // this.calResult(x);
 
     var maxval = x[x.length -1].age;
     console.log(maxval);
@@ -94,70 +93,73 @@ export class ResultsPage implements OnInit {
     var val = Number(maxval);
     if (val >= 30) {
       console.log("Age 30");
-      if (!x.some(it => it.isPass === false && Number(it.age) <= 30 && it.rateType === "GM")) {
+      if (!x.some(it => it.isPass === false && Number(it.age) <= 30 && it.rateType === "GM") && x.find(it => Number(it.age) <= 30 && it.rateType === "GM")) {
         this.GM_Value = 1;
       }
-      if (!x.some(it => it.isPass === false && Number(it.age) <= 30 && it.rateType === "FM")) {
+      if (!x.some(it => it.isPass === false && Number(it.age) <= 30 && it.rateType === "FM") && x.find(it => Number(it.age) <= 30 && it.rateType === "FM")) {
         this.FM_Value = 1;
       }
-      if (!x.some(it => it.isPass === false && Number(it.age) <= 30 && it.rateType === "RL")) {
+      if (!x.some(it => it.isPass === false && Number(it.age) <= 30 && it.rateType === "RL") && x.find(it => Number(it.age) <= 30 && it.rateType === "RL")) {
         this.RL_Value = 1;
       }
-      if (!x.some(it => it.isPass === false && Number(it.age) <= 30 && it.rateType === "EL")) {
+      if (!x.some(it => it.isPass === false && Number(it.age) <= 30 && it.rateType === "EL") && x.find(it => Number(it.age) <= 30 && it.rateType === "EL")) {
         this.EL_Value = 1;
       }
-      if (!x.some(it => it.isPass === false && Number(it.age) <= 30 && it.rateType === "PS")) {
+      if (!x.some(it => it.isPass === false && Number(it.age) <= 30 && it.rateType === "PS") && x.find(it => Number(it.age) <= 30 && it.rateType === "PS")) {
         this.PS_Value = 1;
       }
-    } else if (val > 30 && val < 37) {
+    }
+    if (val > 30 ) {
       console.log("Age 31-36");
-      if (!x.some(it => it.isPass === false && Number(it.age) > 30 && Number(it.age) < 37 && it.rateType === "GM")) {
+      if (!x.some(it => it.isPass === false && Number(it.age) > 30 && Number(it.age) < 37 && it.rateType === "GM") && x.find(it => Number(it.age) > 30 && Number(it.age) < 37 && it.rateType === "GM")) {
         this.GM_Value = 2;
       }
-      if (!x.some(it => it.isPass === false && Number(it.age) > 30 && Number(it.age) < 37 && it.rateType === "FM")) {
+      if (!x.some(it => it.isPass === false && Number(it.age) > 30 && Number(it.age) < 37 && it.rateType === "FM") && x.find(it => Number(it.age) > 30 && Number(it.age) < 37 && it.rateType === "FM")) {
         this.FM_Value = 2;
       }
-      if (!x.some(it => it.isPass === false && Number(it.age) > 30 && Number(it.age) < 37 && it.rateType === "RL")) {
+      if (!x.some(it => it.isPass === false && Number(it.age) > 30 && Number(it.age) < 37 && it.rateType === "RL") && x.find(it => Number(it.age) > 30 && Number(it.age) < 37 && it.rateType === "RL")) {
         this.RL_Value = 2;
       }
-      if (!x.some(it => it.isPass === false && Number(it.age) > 30 && Number(it.age) < 37 && it.rateType === "EL")) {
+      if (!x.some(it => it.isPass === false && Number(it.age) > 30 && Number(it.age) < 37 && it.rateType === "EL") && x.find(it => Number(it.age) > 30 && Number(it.age) < 37 && it.rateType === "EL")) {
         this.EL_Value = 2;
       }
-      if (!x.some(it => it.isPass === false && Number(it.age) > 30 && Number(it.age) < 37 && it.rateType === "PS")) {
+      if (!x.some(it => it.isPass === false && Number(it.age) > 30 && Number(it.age) < 37 && it.rateType === "PS") && x.find(it => Number(it.age) > 30 && Number(it.age) < 37 && it.rateType === "PS")) {
         this.PS_Value = 2;
       }
-    } else if (val > 36 && val < 42) {
+    } 
+    if (val > 36 ) {
       console.log("Age 37-41");
-      if (!x.some(it => it.isPass === false && Number(it.age) > 36 && Number(it.age) < 42 && it.rateType === "GM")) {
+      if (!x.some(it => it.isPass === false && Number(it.age) > 36 && Number(it.age) < 42 && it.rateType === "GM") && x.find(it => Number(it.age) > 36 && Number(it.age) < 42 && it.rateType === "GM")) {
         this.GM_Value = 3;
       }
-      if (!x.some(it => it.isPass === false && Number(it.age) > 36 && Number(it.age) < 42 && it.rateType === "FM")) {
+      if (!x.some(it => it.isPass === false && Number(it.age) > 36 && Number(it.age) < 42 && it.rateType === "FM") && x.find(it => Number(it.age) > 36 && Number(it.age) < 42 && it.rateType === "FM")) {
         this.FM_Value = 3;
       }
-      if (!x.some(it => it.isPass === false && Number(it.age) > 36 && Number(it.age) < 42 && it.rateType === "RL")) {
+      if (!x.some(it => it.isPass === false && Number(it.age) > 36 && Number(it.age) < 42 && it.rateType === "RL") && x.find(it => Number(it.age) > 36 && Number(it.age) < 42 && it.rateType === "RL")) {
         this.RL_Value = 3;
       }
-      if (!x.some(it => it.isPass === false && Number(it.age) > 36 && Number(it.age) < 42 && it.rateType === "EL")) {
+      if (!x.some(it => it.isPass === false && Number(it.age) > 36 && Number(it.age) < 42 && it.rateType === "EL") && x.find(it => Number(it.age) > 36 && Number(it.age) < 42 && it.rateType === "EL")) {
         this.EL_Value = 3;
       }
-      if (!x.some(it => it.isPass === false && Number(it.age) > 36 && Number(it.age) < 42 && it.rateType === "PS")) {
+      if (!x.some(it => it.isPass === false && Number(it.age) > 36 && Number(it.age) < 42 && it.rateType === "PS") && x.find(it => Number(it.age) > 36 && Number(it.age) < 42 && it.rateType === "PS")) {
         this.PS_Value = 3;
       }
-    } else if (val >= 42) {
+    } 
+    if (val >= 42) {
       console.log("Age 42");
-      if (!x.some(it => it.isPass === false && Number(it.age) >= 42 && it.rateType === "GM")) {
+      if (!x.some(it => it.isPass === false && Number(it.age) >= 42 && it.rateType === "GM") && x.find(it => Number(it.age) >= 42 && it.rateType === "GM")) {
         this.GM_Value = 4;
       }
-      if (!x.some(it => it.isPass === false && Number(it.age) >= 42 && it.rateType === "FM")) {
+      if (!x.some(it => it.isPass === false && Number(it.age) >= 42 && it.rateType === "FM") && x.find(it => Number(it.age) >= 42 && it.rateType === "FM")) {
         this.FM_Value = 4;
       }
-      if (!x.some(it => it.isPass === false && Number(it.age) >= 42 && it.rateType === "RL")) {
+      if (!x.some(it => it.isPass === false && Number(it.age) >= 42 && it.rateType === "RL") && x.find(it => Number(it.age) >= 42 && it.rateType === "RL")) {
         this.RL_Value = 4;
       }
-      if (!x.some(it => it.isPass === false && Number(it.age) >= 42 && it.rateType === "EL")) {
+      if (!x.some(it => it.isPass === false && Number(it.age) >= 42 && it.rateType === "EL") && x.find(it => Number(it.age) >= 42 && it.rateType === "EL")) {
         this.EL_Value = 4;
       }
-      if (!x.some(it => it.isPass === false && Number(it.age) >= 42 && it.rateType === "PS")) {
+      if (!x.some(it => it.isPass === false && Number(it.age) >= 42 && it.rateType === "PS") && x.find(it => Number(it.age) >= 42 && it.rateType === "PS")) {
         this.PS_Value = 4;
       }
     }
@@ -315,198 +317,6 @@ export class ResultsPage implements OnInit {
       return 3;
     } else if (age >= 42) {
       return 4;
-    }
-  }
-
-  calResult(x: RateResultModel[]) {
-    for (let index = 0; index < x.length; index++) {
-      const element = x[index];
-      //Age 30
-      if (Number(element.age) <= 30) {
-        if (element.rateType == 'GM') {
-          if (element.isPass == true) {
-            this.GM_Value = 1;
-          } else {
-            if (this.GM_Value == 0) {
-            } else {
-              this.GM_Value -= 1;
-            }
-          }
-        }
-        if (element.rateType == 'FM') {
-          if (element.isPass == true) {
-            this.FM_Value = 1;
-          }
-          else {
-            if (this.FM_Value == 0) {
-            } else {
-              this.FM_Value -= 1;
-            }
-          }
-        }
-        if (element.rateType == 'RL') {
-          if (element.isPass == true) {
-            this.RL_Value = 1;
-          }
-          else {
-            if (this.RL_Value == 0) {
-            } else {
-              this.RL_Value -= 1;
-            }
-          }
-        }
-        if (element.rateType == 'EL') {
-          if (element.isPass == true) {
-            this.EL_Value = 1;
-          }
-          else {
-            if (this.EL_Value == 0) {
-            } else {
-              this.EL_Value -= 1;
-            }
-          }
-        }
-        if (element.rateType == 'PS') {
-          if (element.isPass == true) {
-            this.PS_Value = 1;
-          }
-          else {
-            if (this.PS_Value == 0) {
-            } else {
-              this.PS_Value -= 1;
-            }
-          }
-        }
-      }
-      //Age 30 - 37
-      if (Number(element.age) > 30 && Number(element.age) < 37) {
-        if (element.rateType == 'GM') {
-          if (element.isPass == true) {
-            this.GM_Value = 2;
-          }
-          else{
-            this.GM_Value -= 1;
-          }
-        }
-        if (element.rateType == 'FM') {
-          if (element.isPass == true) {
-            this.FM_Value = 2;
-          }
-          else{
-            this.FM_Value -= 1;
-          }
-        }
-        if (element.rateType == 'RL') {
-          if (element.isPass == true) {
-            this.RL_Value = 2;
-          }
-          else{
-            this.RL_Value -= 1;
-          }
-        }
-        if (element.rateType == 'EL') {
-          if (element.isPass == true) {
-            this.EL_Value = 2;
-          }
-          else{
-            this.EL_Value -= 1;
-          }
-        }
-        if (element.rateType == 'PS') {
-          if (element.isPass == true) {
-            this.PS_Value = 2;
-          }
-          else{
-            this.PS_Value -= 1;
-          }
-        }
-      }
-      //Age 36 - 42
-      if (Number(element.age) > 36 && Number(element.age) < 42) {
-        if (element.rateType == 'GM') {
-          if (element.isPass == true) {
-            this.GM_Value = 3;
-          }
-          else{
-            this.GM_Value -= 1;
-          }
-        }
-        if (element.rateType == 'FM') {
-          if (element.isPass == true) {
-            this.FM_Value = 3;
-          }
-          else{
-            this.FM_Value -= 1;
-          }
-        }
-        if (element.rateType == 'RL') {
-          if (element.isPass == true) {
-            this.RL_Value = 3;
-          }
-          else{
-            this.RL_Value -= 1;
-          }
-        }
-        if (element.rateType == 'EL') {
-          if (element.isPass == true) {
-            this.EL_Value = 3;
-          }
-          else{
-            this.EL_Value -= 1;
-          }
-        }
-        if (element.rateType == 'PS') {
-          if (element.isPass == true) {
-            this.PS_Value = 3;
-          }
-          else{
-            this.PS_Value -= 1;
-          }
-        }
-      }
-      //Age >42
-      if (Number(element.age) >= 42) {
-        if (element.rateType == 'GM') {
-          if (element.isPass == true) {
-            this.GM_Value = 4;
-          }
-          else{
-            this.GM_Value -= 1;
-          }
-        }
-        if (element.rateType == 'FM') {
-          if (element.isPass == true) {
-            this.FM_Value = 4;
-          }
-          else{
-            this.FM_Value -= 1;
-          }
-        }
-        if (element.rateType == 'RL') {
-          if (element.isPass == true) {
-            this.RL_Value = 4;
-          }
-          else{
-            this.RL_Value -= 1;
-          }
-        }
-        if (element.rateType == 'EL') {
-          if (element.isPass == true) {
-            this.EL_Value = 4;
-          }
-          else{
-            this.EL_Value -= 1;
-          }
-        }
-        if (element.rateType == 'PS') {
-          if (element.isPass == true) {
-            this.PS_Value = 4;
-          }
-          else{
-            this.PS_Value -= 1;
-          }
-        }
-      }
     }
   }
 }
