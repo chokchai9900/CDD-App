@@ -86,7 +86,7 @@ export class ResultsPage implements OnInit {
     console.log(this.EL_Value);
     console.log(this.PS_Value);
     console.log(showResult);
-  }
+  } 
 
   func(x: RateResultModel[],maxval : string){
 
